@@ -1,280 +1,1518 @@
 <!doctype html>
 <html lang="ja">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="笑楽連（しょうらくれん）- 埼玉県草加市を拠点に活動する阿波踊りグループ。活動記録・今後の予定・連員募集・SNSリンク。"
-    />
-    <title>笑楽連 | Shoraku-ren</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles.css" />
-    <link rel="icon" href="data:," />
-  </head>
-  <body>
-    <a class="skip-link" href="#main">本文へスキップ</a>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="笑楽連（しょうらくれん）- 埼玉県草加市を拠点に活動する阿波踊りグループ。活動記録・今後の予定・連員募集・SNSリンク。" />
+  <title>笑楽連 | Shoraku-ren</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --color-primary: #3b82f6;
+      --color-primary-dark: #2563eb;
+      --color-primary-light: #60a5fa;
+      --color-accent: #ef4444;
+      --color-accent-2: #f59e0b;
+      --color-accent-3: #10b981;
+      --color-bg: #ffffff;
+      --color-bg-alt: #f0f9ff;
+      --color-text: #1e293b;
+      --color-text-muted: #64748b;
+      --color-border: #cbd5e1;
+      --shadow-sm: 0 1px 3px rgba(59,130,246,0.12);
+      --shadow-md: 0 4px 6px rgba(59,130,246,0.15);
+      --shadow-lg: 0 10px 20px rgba(59,130,246,0.2);
+      --radius: 20px;
+    }
 
-    <header class="site-header">
-      <div class="container header-inner">
-        <div class="brand">
-          <div class="brand-mark" aria-hidden="true">笑</div>
-          <div class="brand-text">
-            <div class="brand-name">笑楽連</div>
-            <div class="brand-sub">Shoraku-ren / Awa Odori</div>
-          </div>
-        </div>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        <nav class="nav" aria-label="メインメニュー">
-          <a class="nav-link" href="#about" data-i18n="nav_about">連紹介</a>
-          <a class="nav-link" href="#schedule" data-i18n="nav_schedule">活動予定</a>
-          <a class="nav-link" href="#media" data-i18n="nav_media">動画・写真</a>
-          <a class="nav-link" href="#join" data-i18n="nav_join">連員募集</a>
-          <a class="nav-link" href="#contact" data-i18n="nav_contact">お問い合わせ</a>
-        </nav>
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--color-text);
+      line-height: 1.7;
+      background: var(--color-bg);
+      position: relative;
+      overflow-x: hidden;
+    }
 
-        <div class="header-actions">
-          <div class="lang-switch" role="group" aria-label="Language">
-            <button class="lang-btn" type="button" data-lang="ja" aria-pressed="true">
-              日本語
-            </button>
-            <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">
-              EN
-            </button>
-            <button class="lang-btn" type="button" data-lang="zh" aria-pressed="false">
-              中文
-            </button>
-          </div>
-          <a class="btn primary" href="#contact" data-i18n="cta_contact">DMで問い合わせ</a>
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(59,130,246,0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(239,68,68,0.08) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(245,158,11,0.06) 0%, transparent 50%);
+      z-index: -1;
+      pointer-events: none;
+      animation: gradientShift 15s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.1); }
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--color-primary);
+      color: white;
+      padding: 8px;
+      text-decoration: none;
+      z-index: 1000;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px) saturate(180%);
+      box-shadow: 0 4px 20px rgba(59,130,246,0.1);
+      z-index: 100;
+      padding: 1.25rem 0;
+      border-bottom: 3px solid;
+      border-image: linear-gradient(90deg, #3b82f6, #ef4444, #f59e0b) 1;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .brand-mark {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #3b82f6 0%, #ef4444 50%, #f59e0b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      animation: smile 2s ease-in-out infinite;
+      transform-origin: center;
+      cursor: pointer;
+      transition: transform 0.3s;
+      filter: drop-shadow(2px 2px 4px rgba(59,130,246,0.3));
+    }
+
+    .brand-mark:hover {
+      transform: scale(1.3) rotate(10deg);
+      animation: bounceRotate 0.6s ease;
+    }
+
+    @keyframes bounceRotate {
+      0%, 100% { transform: scale(1.3) rotate(10deg); }
+      25% { transform: scale(1.4) rotate(-10deg); }
+      50% { transform: scale(1.5) rotate(15deg); }
+      75% { transform: scale(1.4) rotate(-5deg); }
+    }
+
+    @keyframes smile {
+      0%, 100% { transform: scale(1) rotate(0deg); }
+      25% { transform: scale(1.15) rotate(-8deg); }
+      50% { transform: scale(1.2) rotate(8deg); }
+      75% { transform: scale(1.15) rotate(-5deg); }
+    }
+
+    .brand-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .brand-sub {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+    }
+
+    .nav {
+      display: flex;
+      gap: 1.5rem;
+      margin-left: auto;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--color-text);
+      font-weight: 600;
+      transition: all 0.3s;
+      position: relative;
+      padding: 0.5rem 0;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #3b82f6, #ef4444);
+      transition: width 0.3s;
+      border-radius: 3px;
+    }
+
+    .nav-link:hover {
+      color: var(--color-primary);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .lang-switch {
+      display: flex;
+      gap: 0.25rem;
+      background: linear-gradient(135deg, #f0f9ff 0%, #fef3c7 100%);
+      padding: 0.25rem;
+      border-radius: 999px;
+      border: 2px solid var(--color-primary);
+      box-shadow: 0 4px 12px rgba(59,130,246,0.2);
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+      cursor: pointer;
+      border-radius: calc(var(--radius) - 2px);
+      transition: all 0.3s;
+      font-weight: 600;
+    }
+
+    .lang-btn[aria-pressed="true"] {
+      background: var(--color-primary);
+      color: white;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.3s;
+      border: 2px solid transparent;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.3);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+
+    .btn:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+      color: white;
+      box-shadow: 0 4px 15px rgba(59,130,246,0.4);
+    }
+
+    .btn.primary:hover {
+      background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 25px rgba(59,130,246,0.5);
+    }
+
+    .btn.ghost {
+      background: transparent;
+      color: var(--color-primary);
+      border-color: var(--color-primary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn.ghost::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: linear-gradient(135deg, #3b82f6 0%, #ef4444 100%);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.5s, height 0.5s;
+      z-index: -1;
+    }
+
+    .btn.ghost:hover {
+      color: white;
+      border-color: transparent;
+    }
+
+    .btn.ghost:hover::after {
+      width: 300px;
+      height: 300px;
+    }
+
+    /* Audio Control */
+    .audio-control {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 1000;
+    }
+
+    .audio-btn {
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #3b82f6 0%, #ef4444 50%, #f59e0b 100%);
+      border: 4px solid white;
+      box-shadow: 0 8px 25px rgba(59,130,246,0.4);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .audio-btn:hover {
+      transform: scale(1.2) rotate(10deg);
+      box-shadow: 0 15px 40px rgba(59,130,246,0.5);
+    }
+
+    .audio-btn.playing {
+      animation: spin 3s linear infinite, pulse 2s ease-in-out infinite;
+      box-shadow: 0 0 0 0 rgba(59,130,246,0.7), 0 0 0 10px rgba(239,68,68,0.5), 0 0 0 20px rgba(245,158,11,0.3);
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 10px 20px rgba(30,64,175,0.2), 0 0 0 0 rgba(30,64,175,0.4); }
+      50% { box-shadow: 0 15px 30px rgba(30,64,175,0.3), 0 0 0 20px rgba(30,64,175,0); }
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      padding: 6rem 0;
+      overflow: hidden;
+      background: linear-gradient(135deg, #dbeafe 0%, #fae8ff 50%, #fef3c7 100%);
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 30%, rgba(59,130,246,0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(239,68,68,0.15) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(245,158,11,0.1) 0%, transparent 50%);
+      animation: float 20s ease-in-out infinite;
+    }
+
+    .hero::after {
+      content: "🎉";
+      position: absolute;
+      font-size: 8rem;
+      opacity: 0.1;
+      top: 10%;
+      right: 10%;
+      animation: spin 20s linear infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      33% { transform: translate(30px, -30px) rotate(5deg); }
+      66% { transform: translate(-20px, 20px) rotate(-5deg); }
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 3rem;
+      align-items: start;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      color: white;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 1rem;
+      display: inline-block;
+      background: linear-gradient(135deg, #ef4444 0%, #f59e0b 100%);
+      padding: 0.6rem 1.5rem;
+      border-radius: 999px;
+      box-shadow: 0 4px 15px rgba(239,68,68,0.4);
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, #1e40af 0%, #ef4444 50%, #f59e0b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(2px 2px 8px rgba(59,130,246,0.2));
+    }
+
+    .hero-lead {
+      font-size: 1.25rem;
+      color: var(--color-text);
+      margin-bottom: 2rem;
+      line-height: 1.9;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(59,130,246,0.2);
+      box-shadow: 0 4px 20px rgba(59,130,246,0.1);
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .quick-links {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .chip {
+      display: inline-block;
+      padding: 0.6rem 1.5rem;
+      background: white;
+      border: 2px solid var(--color-primary);
+      border-radius: 999px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--color-primary);
+      transition: all 0.3s;
+      box-shadow: 0 4px 12px rgba(59,130,246,0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .chip::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: linear-gradient(135deg, #3b82f6, #ef4444);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.5s, height 0.5s;
+      z-index: -1;
+    }
+
+    .chip:hover {
+      color: white;
+      border-color: transparent;
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 8px 20px rgba(59,130,246,0.4);
+    }
+
+    .chip:hover::before {
+      width: 200px;
+      height: 200px;
+    }
+
+    .fineprint {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+    }
+
+    /* Card */
+    .card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: 0 8px 30px rgba(59,130,246,0.12);
+      border: 3px solid transparent;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #3b82f6 0%, #ef4444 50%, #f59e0b 100%);
+    }
+
+    .card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 15px 40px rgba(59,130,246,0.25);
+      border-color: var(--color-primary);
+    }
+
+    .card-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      border-bottom: 3px solid;
+      border-image: linear-gradient(90deg, #3b82f6, #ef4444) 1;
+      padding-bottom: 0.75rem;
+    }
+
+    .card-list {
+      list-style: none;
+    }
+
+    .card-list li {
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--color-border);
+      transition: all 0.3s;
+    }
+
+    .card-list li:hover {
+      padding-left: 1rem;
+      background: var(--color-bg-alt);
+      border-radius: 8px;
+    }
+
+    .card-list li:last-child {
+      border-bottom: none;
+    }
+
+    .card-list .date {
+      font-size: 0.875rem;
+      color: var(--color-primary);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Gallery Images */
+    .hero-images {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .hero-image {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      transition: all 0.3s;
+      border: 4px solid rgba(255, 255, 255, 0.9);
+    }
+
+    .hero-image:hover {
+      transform: scale(1.05);
+      box-shadow: var(--shadow-lg);
+      z-index: 10;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Section */
+    .section {
+      padding: 5rem 0;
+      position: relative;
+    }
+
+    .section.alt {
+      background: var(--color-bg-alt);
+    }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-title {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #3b82f6 0%, #ef4444 50%, #f59e0b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 5px;
+      background: linear-gradient(90deg, #3b82f6 0%, #ef4444 50%, #f59e0b 100%);
+      border-radius: 10px;
+    }
+
+    .section-sub {
+      color: var(--color-text-muted);
+      font-size: 1.125rem;
+      max-width: 700px;
+      margin: 1rem auto 0;
+    }
+
+    .grid {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+
+    /* Photo Gallery */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .photo-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: all 0.3s;
+      border: 3px solid white;
+      cursor: pointer;
+    }
+
+    .photo-item:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .photo-item img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Prose */
+    .prose p {
+      margin-bottom: 1rem;
+      line-height: 1.9;
+    }
+
+    .prose p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Facts */
+    .facts {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .fact {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 1rem;
+      padding: 1rem;
+      background: var(--color-bg-alt);
+      border-radius: 8px;
+      transition: all 0.3s;
+    }
+
+    .fact:hover {
+      background: var(--color-primary-light);
+      color: white;
+      transform: translateX(8px);
+    }
+
+    .fact dt {
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+
+    .fact:hover dt {
+      color: white;
+    }
+
+    /* Timeline */
+    .timeline {
+      list-style: none;
+      position: relative;
+    }
+
+    .timeline li {
+      padding: 1.5rem;
+      padding-left: 2rem;
+      border-left: 4px solid var(--color-primary);
+      margin-left: 1rem;
+      margin-bottom: 1.5rem;
+      background: white;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: -13px;
+      top: 1.5rem;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      border: 4px solid white;
+      box-shadow: 0 0 0 2px var(--color-primary);
+    }
+
+    .timeline li:hover {
+      transform: translateX(8px);
+      box-shadow: var(--shadow-md);
+      background: var(--color-bg-alt);
+    }
+
+    .timeline .date {
+      font-size: 1rem;
+      color: var(--color-primary);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    /* Bullets */
+    .bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .bullets li {
+      padding: 1rem;
+      padding-left: 3rem;
+      position: relative;
+      background: var(--color-bg-alt);
+      border-radius: 8px;
+      transition: all 0.3s;
+    }
+
+    .bullets li:hover {
+      background: var(--color-primary-light);
+      color: white;
+      transform: translateX(8px);
+    }
+
+    .bullets li:before {
+      content: "✓";
+      position: absolute;
+      left: 1rem;
+      color: var(--color-primary);
+      font-weight: bold;
+      font-size: 1.25rem;
+    }
+
+    .bullets li:hover:before {
+      color: white;
+    }
+
+    /* Parts */
+    .parts-grid {
+      gap: 1.5rem;
+    }
+
+    .part-card {
+      padding: 2rem;
+      background: linear-gradient(135deg, white 0%, var(--color-bg-alt) 100%);
+      border-radius: var(--radius);
+      border: 3px solid var(--color-border);
+      transition: all 0.3s;
+      text-align: center;
+    }
+
+    .part-card:hover {
+      border-color: var(--color-primary);
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+      color: white;
+    }
+
+    .part-card h4 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .part-card p {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+    }
+
+    .part-card:hover p {
+      color: rgba(255,255,255,0.9);
+    }
+
+    /* Contact */
+    .contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .contact-list li {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      background: var(--color-bg-alt);
+      border-radius: var(--radius);
+      transition: all 0.3s;
+    }
+
+    .contact-list li:hover {
+      background: var(--color-primary);
+      color: white;
+      transform: translateX(8px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .contact-list .icon {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      flex-shrink: 0;
+    }
+
+    /* Embed */
+    .embed {
+      margin-top: 1.5rem;
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .embed-placeholder {
+      background: var(--color-bg-alt);
+      border: 3px dashed var(--color-border);
+      padding: 4rem 2rem;
+      text-align: center;
+      color: var(--color-text-muted);
+      border-radius: var(--radius);
+    }
+
+    .embed iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border: none;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+      color: white;
+      padding: 4rem 0 2rem;
+      margin-top: 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .site-footer::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255,255,255,0.03) 20px, rgba(255,255,255,0.03) 40px);
+      pointer-events: none;
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 3rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .footer-brand .brand-mark {
+      color: white;
+      font-size: 3rem;
+    }
+
+    .footer-brand .brand-name {
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.9);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .footer-links a::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: white;
+      transition: width 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .footer-links a:hover::after {
+      width: 100%;
+    }
+
+    .footer-copy {
+      text-align: right;
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .muted {
+      color: var(--color-text-muted);
+      font-size: 0.875rem;
+    }
+
+    .divider {
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0%, var(--color-border) 50%, transparent 100%);
+      margin: 2rem 0;
+    }
+
+    @media (max-width: 968px) {
+      .nav {
+        display: none;
+      }
+      
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+      
+      .hero-card {
+        order: -1;
+      }
+
+      .hero-images {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      
+      .footer-copy {
+        text-align: center;
+      }
+
+      .footer-links {
+        justify-content: center;
+      }
+
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へスキップ</a>
+
+  <!-- Audio Control -->
+  <div class="audio-control">
+    <button class="audio-btn" id="audioBtn" aria-label="阿波踊りの音楽を再生">
+      🎵
+    </button>
+  </div>
+
+  <audio id="awaOdoriAudio" loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  </audio>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">笑</div>
+        <div class="brand-text">
+          <div class="brand-name">笑楽連</div>
+          <div class="brand-sub">Shoraku-ren / Awa Odori</div>
         </div>
       </div>
-    </header>
 
-    <main id="main">
-      <section class="hero">
-        <div class="container hero-inner">
-          <div class="hero-copy">
-            <p class="eyebrow" data-i18n="hero_eyebrow">埼玉県草加市を拠点に活動</p>
-            <h1 class="hero-title" data-i18n="hero_title">
-              笑顔で楽しく阿波踊り。<br />
-              笑楽連（しょうらくれん）
-            </h1>
-            <p class="hero-lead" data-i18n="hero_lead">
-              子どもからお年寄りまで、世代を越えて阿波踊りを愛する仲間たち。少人数でも、ひとつになって“魅せる”
-              阿波踊りを追求しています。
-            </p>
-            <div class="hero-cta">
-              <a class="btn primary" href="#join" data-i18n="cta_join">連員募集を見る</a>
-              <a class="btn ghost" href="#schedule" data-i18n="cta_schedule">今後の予定</a>
-            </div>
+      <nav class="nav" aria-label="メインメニュー">
+        <a class="nav-link" href="#about">連紹介</a>
+        <a class="nav-link" href="#schedule">活動予定</a>
+        <a class="nav-link" href="#media">動画・写真</a>
+        <a class="nav-link" href="#join">連員募集</a>
+        <a class="nav-link" href="#contact">お問い合わせ</a>
+      </nav>
 
-            <div class="quick-links" aria-label="公式SNSリンク">
-              <a class="chip" id="link-instagram" href="#" target="_blank" rel="noreferrer">
-                Instagram
-              </a>
-              <a class="chip" id="link-facebook" href="#" target="_blank" rel="noreferrer">
-                Facebook
-              </a>
-              <a class="chip" id="link-youtube" href="#" target="_blank" rel="noreferrer">
-                YouTube
-              </a>
-              <a class="chip" id="link-line" href="#" target="_blank" rel="noreferrer">
-                LINE
-              </a>
-            </div>
-            <p class="fineprint" data-i18n="hero_note">
-              ※SNSリンクは後から差し替えできます。埋め込み（YouTube/Instagram）も対応。
-            </p>
+      <div class="header-actions">
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button class="lang-btn" type="button" data-lang="ja" aria-pressed="true">日本語</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+          <button class="lang-btn" type="button" data-lang="zh" aria-pressed="false">中文</button>
+        </div>
+        <a class="btn primary" href="#contact">DMで問い合わせ</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">埼玉県草加市を拠点に活動</p>
+          <h1 class="hero-title">笑顔で楽しく阿波踊り。<br />笑楽連（しょうらくれん）</h1>
+          <p class="hero-lead">子どもからお年寄りまで、世代を越えて阿波踊りを愛する仲間たち。少人数でも、ひとつになって"魅せる" 阿波踊りを追求しています。</p>
+          <div class="hero-cta">
+            <a class="btn primary" href="#join">連員募集を見る</a>
+            <a class="btn ghost" href="#schedule">今後の予定</a>
           </div>
 
-          <div class="hero-card" aria-label="お知らせ">
-            <div class="card">
-              <div class="card-title" data-i18n="news_title">最新情報</div>
-              <ul class="card-list" id="news-list" aria-live="polite"></ul>
+          <div class="quick-links" aria-label="公式SNSリンク">
+            <a class="chip" href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
+            <a class="chip" href="https://facebook.com" target="_blank" rel="noreferrer">Facebook</a>
+            <a class="chip" href="https://youtube.com" target="_blank" rel="noreferrer">YouTube</a>
+            <a class="chip" href="https://line.me" target="_blank" rel="noreferrer">LINE</a>
+          </div>
+          <p class="fineprint">※SNSリンクは後から差し替えできます。埋め込み（YouTube/Instagram）も対応。</p>
+
+          <div class="hero-images">
+            <div class="hero-image">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Awa-odori_2008_Tokushima_06.jpg?width=800" alt="阿波踊り - 女踊り" />
+            </div>
+            <div class="hero-image">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Awa-odori_2008_Tokushima_02.jpg?width=800" alt="阿波踊り - 男踊り" />
             </div>
           </div>
         </div>
-        <div class="hero-bg" aria-hidden="true"></div>
-      </section>
 
-      <section id="about" class="section">
-        <div class="container">
-          <div class="section-head">
-            <h2 class="section-title" data-i18n="about_title">連紹介</h2>
-            <p class="section-sub" data-i18n="about_sub">
-              「笑顔で楽しく阿波踊り」— 踊れば自然と笑顔が生まれ、笑顔が広がれば、また踊りが輝く。
-            </p>
-          </div>
-
-          <div class="grid two">
-            <div class="card">
-              <div class="card-title" data-i18n="about_overview_title">私たちについて</div>
-              <div class="prose" id="about-overview"></div>
-            </div>
-            <div class="card">
-              <div class="card-title" data-i18n="about_facts_title">基本情報</div>
-              <dl class="facts" id="about-facts"></dl>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="schedule" class="section alt">
-        <div class="container">
-          <div class="section-head">
-            <h2 class="section-title" data-i18n="schedule_title">2025活動記録と今後の予定</h2>
-            <p class="section-sub" data-i18n="schedule_sub">
-              地域のイベントや福祉施設での出演など、交流の場に積極的に参加しています。
-            </p>
-          </div>
-
-          <div class="grid two">
-            <div class="card">
-              <div class="card-title" data-i18n="past_title">2025 活動記録</div>
-              <ul class="timeline" id="past-events"></ul>
-            </div>
-            <div class="card">
-              <div class="card-title" data-i18n="future_title">今後の予定</div>
-              <ul class="timeline" id="future-events"></ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="media" class="section">
-        <div class="container">
-          <div class="section-head">
-            <h2 class="section-title" data-i18n="media_title">動画・写真</h2>
-            <p class="section-sub" data-i18n="media_sub">
-              雰囲気が伝わるように、動画や写真を掲載できるスペースを用意しています。
-            </p>
-          </div>
-
-          <div class="grid two">
-            <div class="card">
-              <div class="card-title" data-i18n="youtube_title">YouTube</div>
-              <p class="muted" data-i18n="youtube_note">
-                下の埋め込みは差し替え可能です（動画ID/再生リスト/チャンネル）。
-              </p>
-              <div class="embed" id="youtube-embed">
-                <div class="embed-placeholder" data-i18n="embed_placeholder">
-                  ここにYouTube動画を埋め込みます（設定でONにできます）
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-title" data-i18n="instagram_title">Instagram</div>
-              <p class="muted" data-i18n="instagram_note">
-                Instagramは「リンクのみ」または「埋め込み」どちらにも対応します。
-              </p>
-              <div class="embed" id="instagram-embed">
-                <div class="embed-placeholder" data-i18n="embed_placeholder_ig">
-                  ここにInstagram投稿を埋め込みます（設定でONにできます）
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card media-gallery">
-            <div class="card-title" data-i18n="gallery_title">写真ギャラリー（任意）</div>
-            <p class="muted" data-i18n="gallery_note">
-              後から写真を追加できます。まずは枠だけ用意しています。
-            </p>
-            <div class="gallery" id="gallery"></div>
-          </div>
-        </div>
-      </section>
-
-      <section id="join" class="section alt">
-        <div class="container">
-          <div class="section-head">
-            <h2 class="section-title" data-i18n="join_title">連員募集</h2>
-            <p class="section-sub" data-i18n="join_sub">
-              国籍や年齢、経験を問わず、全てのパートで連員を大募集中です！
-            </p>
-          </div>
-
-          <div class="grid two">
-            <div class="card">
-              <div class="card-title" data-i18n="join_message_title">メッセージ</div>
-              <div class="prose" id="join-message"></div>
-            </div>
-            <div class="card">
-              <div class="card-title" data-i18n="join_conditions_title">入連条件</div>
-              <ul class="bullets" id="join-conditions"></ul>
-              <div class="divider"></div>
-              <div class="card-title" data-i18n="fees_title">費用（目安）</div>
-              <dl class="facts" id="fees"></dl>
-            </div>
-          </div>
-
+        <div class="hero-card" aria-label="お知らせ">
           <div class="card">
-            <div class="card-title" data-i18n="parts_title">募集パート</div>
-            <div class="grid two parts-grid" id="parts"></div>
+            <div class="card-title">最新情報</div>
+            <ul class="card-list">
+              <li>
+                <span class="date">2025.12.15</span>
+                新春公演の詳細が決定しました
+              </li>
+              <li>
+                <span class="date">2025.11.28</span>
+                連員募集を開始しました
+              </li>
+              <li>
+                <span class="date">2025.11.10</span>
+                秋祭りでの演舞が大盛況でした
+              </li>
+            </ul>
           </div>
         </div>
-      </section>
-
-      <section id="contact" class="section">
-        <div class="container">
-          <div class="section-head">
-            <h2 class="section-title" data-i18n="contact_title">お問い合わせ</h2>
-            <p class="section-sub" data-i18n="contact_sub">
-              体験参加のご相談・出演依頼など、お気軽にご連絡ください。
-            </p>
-          </div>
-
-          <div class="grid two">
-            <div class="card">
-              <div class="card-title" data-i18n="contact_how_title">連絡方法</div>
-              <ul class="contact-list" id="contact-methods"></ul>
-              <p class="fineprint" data-i18n="contact_note">
-                ※返信まで少しお時間をいただく場合があります。
-              </p>
-            </div>
-            <div class="card">
-              <div class="card-title" data-i18n="contact_person_title">広報担当</div>
-              <dl class="facts">
-                <div class="fact">
-                  <dt data-i18n="contact_person_label">担当</dt>
-                  <dd data-i18n="contact_person_value">谷さん</dd>
-                </div>
-                <div class="fact">
-                  <dt data-i18n="contact_dm_label">連絡</dt>
-                  <dd data-i18n="contact_dm_value">Instagram / Facebook のDM、または公式LINE</dd>
-                </div>
-              </dl>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <div class="footer-brand">
-          <div class="brand-mark" aria-hidden="true">笑</div>
-          <div>
-            <div class="brand-name">笑楽連</div>
-            <div class="muted" data-i18n="footer_tagline">笑顔で楽しく阿波踊り</div>
-          </div>
-        </div>
-        <div class="footer-links">
-          <a href="#about" data-i18n="nav_about">連紹介</a>
-          <a href="#schedule" data-i18n="nav_schedule">活動予定</a>
-          <a href="#media" data-i18n="nav_media">動画・写真</a>
-          <a href="#join" data-i18n="nav_join">連員募集</a>
-          <a href="#contact" data-i18n="nav_contact">お問い合わせ</a>
-        </div>
-        <div class="muted footer-copy">© <span id="year"></span> Shoraku-ren</div>
       </div>
-    </footer>
+    </section>
 
-    <script src="./script.js"></script>
-  </body>
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">連紹介</h2>
+          <p class="section-sub">「笑顔で楽しく阿波踊り」— 踊れば自然と笑顔が生まれ、笑顔が広がれば、また踊りが輝く。</p>
+        </div>
+
+        <div class="grid two">
+          <div class="card">
+            <div class="card-title">私たちについて</div>
+            <div class="prose">
+              <p>笑楽連は、埼玉県草加市を拠点に活動する阿波踊りグループです。2010年の設立以来、「笑顔で楽しく」をモットーに、地域のイベントや福祉施設での公演を通じて、阿波踊りの魅力を伝え続けています。</p>
+              <p>少人数ながらも一体感のある演舞を追求し、観る人の心に響く阿波踊りを目指しています。年齢や経験を問わず、誰でも楽しめる活動を大切にしています。</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-title">基本情報</div>
+            <dl class="facts">
+              <div class="fact">
+                <dt>設立</dt>
+                <dd>2010年</dd>
+              </div>
+              <div class="fact">
+                <dt>拠点</dt>
+                <dd>埼玉県草加市</dd>
+              </div>
+              <div class="fact">
+                <dt>連員数</dt>
+                <dd>約30名</dd>
+              </div>
+              <div class="fact">
+                <dt>練習日</dt>
+                <dd>毎週水曜・土曜 19:00〜21:00</dd>
+              </div>
+              <div class="fact">
+                <dt>練習場所</dt>
+                <dd>草加市文化会館ほか</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="photo-grid" style="margin-top: 3rem;">
+          <div class="photo-item">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Awa-odori_2008_Tokushima.jpg?width=900" alt="集合写真" />
+          </div>
+          <div class="photo-item">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/%E8%97%8D%E9%9F%BF%E9%80%A3%E3%81%AE%E6%BC%94%E8%88%9E%28%E5%8D%97%E8%B6%8A%E8%B0%B7%29.jpg?width=900" alt="福祉施設での公演" />
+          </div>
+          <div class="photo-item">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Awa-Odori-kikusui-narimono.JPG?width=900" alt="提灯" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="schedule" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">2025活動記録と今後の予定</h2>
+          <p class="section-sub">地域のイベントや福祉施設での出演など、交流の場に積極的に参加しています。</p>
+        </div>
+
+        <div class="grid two">
+          <div class="card">
+            <div class="card-title">2025 活動記録</div>
+            <ul class="timeline">
+              <li>
+                <div class="date">11月3日</div>
+                草加市秋祭り
+              </li>
+              <li>
+                <div class="date">9月15日</div>
+                地域福祉施設慰問
+              </li>
+              <li>
+                <div class="date">8月12-14日</div>
+                高円寺阿波おどり参加
+              </li>
+              <li>
+                <div class="date">7月20日</div>
+                草加夏まつり
+              </li>
+              <li>
+                <div class="date">5月5日</div>
+                こどもの日イベント
+              </li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="card-title">今後の予定</div>
+            <ul class="timeline">
+              <li>
+                <div class="date">2026年1月12日</div>
+                新春公演（草加市文化会館）
+              </li>
+              <li>
+                <div class="date">2026年3月</div>
+                春の交流会（調整中）
+              </li>
+              <li>
+                <div class="date">2026年8月</div>
+                高円寺阿波おどり参加予定
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="photo-grid" style="margin-top: 3rem;">
+          <div class="photo-item">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Awa-odori_2008_Tokushima_04.jpg?width=900" alt="夜のイベント" />
+          </div>
+          <div class="photo-item">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Awa-odori_K%C5%8Denji_%E7%B2%8B%E8%BC%A6.jpg?width=900" alt="提灯と踊り" />
+          </div>
+          <div class="photo-item">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Awa-odori_K%C5%8Denji_02.jpg?width=900" alt="ステージ公演" />
+          </div>
+          <div class="photo-item">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/%E5%8D%97%E8%B6%8A%E8%B0%B7%E3%83%BB%E5%8B%A2%E9%80%A3%EF%BC%88%E3%81%8D%E3%81%8A%E3%81%84%E3%82%8C%E3%82%93%EF%BC%89%E3%81%AE%E6%BC%94%E8%88%9E_01.jpg?width=900" alt="子ども踊り" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="media" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">動画・写真</h2>
+          <p class="section-sub">雰囲気が伝わるように、動画や写真を掲載できるスペースを用意しています。</p>
+        </div>
+
+        <div class="grid two">
+          <div class="card">
+            <div class="card-title">YouTube</div>
+            <p class="muted">下の埋め込みは差し替え可能です（動画ID/再生リスト/チャンネル）。</p>
+            <div class="embed">
+              <div class="embed-placeholder">ここにYouTube動画を埋め込みます（設定でONにできます）</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-title">Instagram</div>
+            <p class="muted">Instagramは「リンクのみ」または「埋め込み」どちらにも対応します。</p>
+            <div class="embed">
+              <div class="embed-placeholder">ここにInstagram投稿を埋め込みます（設定でONにできます）</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top: 2rem;">
+          <div class="card-title">写真ギャラリー</div>
+          <p class="muted">活動の様子をご覧ください。</p>
+          <div class="photo-grid">
+            <div class="photo-item">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Awa-odori_2008_Tokushima.jpg?width=900" alt="阿波踊り1" />
+            </div>
+            <div class="photo-item">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Awa-odori_2008_Tokushima_06.jpg?width=900" alt="阿波踊り2" />
+            </div>
+            <div class="photo-item">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Awa-odori_K%C5%8Denji_01.jpg?width=900" alt="阿波踊り3" />
+            </div>
+            <div class="photo-item">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Awa-odori_2008_Tokushima_02.jpg?width=900" alt="阿波踊り4" />
+            </div>
+            <div class="photo-item">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Awa-Odori-kikusui-narimono.JPG?width=900" alt="阿波踊り5" />
+            </div>
+            <div class="photo-item">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/%E8%97%8D%E9%9F%BF%E9%80%A3%E3%81%AE%E6%BC%94%E8%88%9E%28%E5%8D%97%E8%B6%8A%E8%B0%B7%29.jpg?width=900" alt="阿波踊り6" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="join" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">連員募集</h2>
+          <p class="section-sub">国籍や年齢、経験を問わず、全てのパートで連員を大募集中です!</p>
+        </div>
+
+        <div class="grid two">
+          <div class="card">
+            <div class="card-title">メッセージ</div>
+            <div class="prose">
+              <p>阿波踊りが初めての方も大歓迎!丁寧に指導しますので、安心してご参加ください。</p>
+              <p>見学・体験は随時受け付けています。まずはお気軽にお問い合わせください。一緒に笑顔で楽しく踊りましょう!</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-title">入連条件</div>
+            <ul class="bullets">
+              <li>年齢・性別・国籍不問</li>
+              <li>阿波踊り経験不問（初心者歓迎）</li>
+              <li>月2回以上の練習参加が可能な方</li>
+              <li>イベント出演に協力できる方</li>
+              <li>仲間を大切にできる方</li>
+            </ul>
+            <div class="divider"></div>
+            <div class="card-title">費用（目安）</div>
+            <dl class="facts">
+              <div class="fact">
+                <dt>入会金</dt>
+                <dd>無料</dd>
+              </div>
+              <div class="fact">
+                <dt>月会費</dt>
+                <dd>2,000円</dd>
+              </div>
+              <div class="fact">
+                <dt>衣装代</dt>
+                <dd>実費（約15,000円〜）</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top: 2rem;">
+          <div class="card-title">募集パート</div>
+          <div class="grid two parts-grid">
+            <div class="part-card">
+              <h4>🎭 女踊り</h4>
+              <p>優雅で美しい踊りを一緒に楽しみましょう</p>
+            </div>
+            <div class="part-card">
+              <h4>💪 男踊り</h4>
+              <p>力強く躍動感あふれる踊りを目指します</p>
+            </div>
+            <div class="part-card">
+              <h4>🥁 鳴り物</h4>
+              <p>太鼓・鉦・笛など、リズムを刻む楽しさを</p>
+            </div>
+            <div class="part-card">
+              <h4>👨‍👩‍👧‍👦 子ども踊り</h4>
+              <p>小学生〜中学生、元気いっぱい踊ろう!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">お問い合わせ</h2>
+          <p class="section-sub">体験参加のご相談・出演依頼など、お気軽にご連絡ください。</p>
+        </div>
+
+        <div class="grid two">
+          <div class="card">
+            <div class="card-title">連絡方法</div>
+            <ul class="contact-list">
+              <li>
+                <div class="icon">📷</div>
+                <div>Instagram DM</div>
+              </li>
+              <li>
+                <div class="icon">👥</div>
+                <div>Facebook メッセージ</div>
+              </li>
+              <li>
+                <div class="icon">💬</div>
+                <div>LINE公式アカウント</div>
+              </li>
+            </ul>
+            <p class="fineprint">※返信まで少しお時間をいただく場合があります。</p>
+          </div>
+          <div class="card">
+            <div class="card-title">広報担当</div>
+            <dl class="facts">
+              <div class="fact">
+                <dt>担当</dt>
+                <dd>谷さん</dd>
+              </div>
+              <div class="fact">
+                <dt>連絡</dt>
+                <dd>Instagram / Facebook のDM、または公式LINE</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="brand-mark" aria-hidden="true">笑</div>
+        <div>
+          <div class="brand-name">笑楽連</div>
+          <div class="muted" style="color: rgba(255,255,255,0.8);">笑顔で楽しく阿波踊り</div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="#about">連紹介</a>
+        <a href="#schedule">活動予定</a>
+        <a href="#media">動画・写真</a>
+        <a href="#join">連員募集</a>
+        <a href="#contact">お問い合わせ</a>
+      </div>
+      <div class="footer-copy">© <span id="year">2025</span> Shoraku-ren</div>
+    </div>
+  </footer>
+
+  <script>
+    // Load images from uploaded files
+    async function loadBackgroundImages() {
+      // Wikimedia Commons Awa Odori photos (safe hotlink via Special:FilePath)
+      const headerImage = 'https://commons.wikimedia.org/wiki/Special:FilePath/Awa-odori_2008_Tokushima.jpg?width=1600';
+      const heroImage = 'https://commons.wikimedia.org/wiki/Special:FilePath/Awa-odori_2008_Tokushima_06.jpg?width=1600';
+      
+      const header = document.querySelector('.site-header');
+      const hero = document.querySelector('.hero');
+      
+      // Set header background
+      header.style.backgroundImage = `
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.97), rgba(255, 255, 255, 0.95)),
+        url('${headerImage}')
+      `;
+      
+      // Set hero background
+      hero.style.backgroundImage = `
+        linear-gradient(135deg, rgba(30, 64, 175, 0.70) 0%, rgba(30, 58, 138, 0.78) 100%),
+        url('${heroImage}')
+      `;
+    }
+    
+    // Load images on page load
+    loadBackgroundImages();
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Audio Control
+    const audioBtn = document.getElementById('audioBtn');
+    const audio = document.getElementById('awaOdoriAudio');
+    let isPlaying = false;
+
+    audioBtn.addEventListener('click', () => {
+      if (isPlaying) {
+        audio.pause();
+        audioBtn.textContent = '🎵';
+        audioBtn.classList.remove('playing');
+      } else {
+        audio.play();
+        audioBtn.textContent = '🎶';
+        audioBtn.classList.add('playing');
+      }
+      isPlaying = !isPlaying;
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Language switcher
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.lang-btn').forEach(b => {
+          b.setAttribute('aria-pressed', 'false');
+        });
+        btn.setAttribute('aria-pressed', 'true');
+      });
+    });
+  </script>
+</body>
 </html>
