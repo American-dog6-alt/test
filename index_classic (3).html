@@ -1,0 +1,2251 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="笑楽連(しょうらくれん)- 埼玉県草加市を拠点に活動する阿波踊りグループ。活動記録・今後の予定・連員募集・SNSリンク。" />
+  <title>笑楽連 | Shoraku-ren</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --color-primary: #3b82f6;
+      --color-primary-dark: #2563eb;
+      --color-primary-light: #60a5fa;
+      --color-accent: #ef4444;
+      --color-accent-2: #f59e0b;
+      --color-accent-3: #10b981;
+      --color-bg: #ffffff;
+      --color-bg-alt: #f0f9ff;
+      --color-text: #1e293b;
+      --color-text-muted: #64748b;
+      --color-border: #cbd5e1;
+      --shadow-sm: 0 1px 3px rgba(59,130,246,0.12);
+      --shadow-md: 0 4px 6px rgba(59,130,246,0.15);
+      --shadow-lg: 0 10px 20px rgba(59,130,246,0.2);
+      --radius: 20px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--color-text);
+      line-height: 1.7;
+      background-color: var(--color-bg);
+      background-image:
+        linear-gradient(rgba(255,255,255,0.55), rgba(255,255,255,0.55)),
+        url('https://raw.githubusercontent.com/American-dog6-alt/test/master/1766894331241.jpg.jpg');
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(59,130,246,0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(239,68,68,0.08) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(245,158,11,0.06) 0%, transparent 50%);
+      z-index: -1;
+      pointer-events: none;
+      animation: gradientShift 15s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.1); }
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--color-primary);
+      color: white;
+      padding: 8px;
+      text-decoration: none;
+      z-index: 1000;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      background-image: 
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.60)),
+        url('https://raw.githubusercontent.com/American-dog6-alt/test/master/1766894331241.jpg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      backdrop-filter: blur(10px) saturate(180%);
+      box-shadow: 0 4px 20px rgba(59,130,246,0.1);
+      z-index: 100;
+      padding: 1.25rem 0;
+      border-bottom: 3px solid;
+      border-image: linear-gradient(90deg, #3b82f6, #ef4444, #f59e0b) 1;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .brand-mark {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #3b82f6 0%, #ef4444 50%, #f59e0b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      animation: smile 2s ease-in-out infinite;
+      transform-origin: center;
+      cursor: pointer;
+      transition: transform 0.3s;
+      filter: drop-shadow(2px 2px 4px rgba(59,130,246,0.3));
+    }
+
+    .brand-mark:hover {
+      transform: scale(1.3) rotate(10deg);
+      animation: bounceRotate 0.6s ease;
+    }
+
+    @keyframes bounceRotate {
+      0%, 100% { transform: scale(1.3) rotate(10deg); }
+      25% { transform: scale(1.4) rotate(-10deg); }
+      50% { transform: scale(1.5) rotate(15deg); }
+      75% { transform: scale(1.4) rotate(-5deg); }
+    }
+
+    @keyframes smile {
+      0%, 100% { transform: scale(1) rotate(0deg); }
+      25% { transform: scale(1.15) rotate(-8deg); }
+      50% { transform: scale(1.2) rotate(8deg); }
+      75% { transform: scale(1.15) rotate(-5deg); }
+    }
+
+    .brand-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .brand-sub {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+    }
+
+    .nav {
+      display: flex;
+      gap: 1.5rem;
+      margin-left: auto;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--color-text);
+      font-weight: 600;
+      transition: all 0.3s;
+      position: relative;
+      padding: 0.5rem 0;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #3b82f6, #ef4444);
+      transition: width 0.3s;
+      border-radius: 3px;
+    }
+
+    .nav-link:hover {
+      color: var(--color-primary);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .lang-switch {
+      display: flex;
+      gap: 0.25rem;
+      background: linear-gradient(135deg, #f0f9ff 0%, #fef3c7 100%);
+      padding: 0.25rem;
+      border-radius: 999px;
+      border: 2px solid var(--color-primary);
+      box-shadow: 0 4px 12px rgba(59,130,246,0.2);
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+      cursor: pointer;
+      border-radius: calc(var(--radius) - 2px);
+      transition: all 0.3s;
+      font-weight: 600;
+    }
+
+    .lang-btn[aria-pressed="true"] {
+      background: var(--color-primary);
+      color: white;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.3s;
+      border: 2px solid transparent;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.3);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+
+    .btn:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+      color: white;
+      box-shadow: 0 4px 15px rgba(59,130,246,0.4);
+    }
+
+    .btn.primary:hover {
+      background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 25px rgba(59,130,246,0.5);
+    }
+
+    .btn.ghost {
+      background: transparent;
+      color: var(--color-primary);
+      border-color: var(--color-primary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn.ghost::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: linear-gradient(135deg, #3b82f6 0%, #ef4444 100%);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.5s, height 0.5s;
+      z-index: -1;
+    }
+
+    .btn.ghost:hover {
+      color: white;
+      border-color: transparent;
+    }
+
+    .btn.ghost:hover::after {
+      width: 300px;
+      height: 300px;
+    }
+
+    /* Audio Control */
+    .audio-control {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 1000;
+    }
+
+    .audio-btn {
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #3b82f6 0%, #ef4444 50%, #f59e0b 100%);
+      border: 4px solid white;
+      box-shadow: 0 8px 25px rgba(59,130,246,0.4);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .audio-btn:hover {
+      transform: scale(1.2) rotate(10deg);
+      box-shadow: 0 15px 40px rgba(59,130,246,0.5);
+    }
+
+    .audio-btn.playing {
+      animation: spin 3s linear infinite, pulse 2s ease-in-out infinite;
+      box-shadow: 0 0 0 0 rgba(59,130,246,0.7), 0 0 0 10px rgba(239,68,68,0.5), 0 0 0 20px rgba(245,158,11,0.3);
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 10px 20px rgba(30,64,175,0.2), 0 0 0 0 rgba(30,64,175,0.4); }
+      50% { box-shadow: 0 15px 30px rgba(30,64,175,0.3), 0 0 0 20px rgba(30,64,175,0); }
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      padding: 6rem 0;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(219,234,254,0.65) 0%, rgba(250,232,255,0.65) 50%, rgba(254,243,199,0.65) 100%);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 30%, rgba(59,130,246,0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(239,68,68,0.15) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(245,158,11,0.1) 0%, transparent 50%);
+      animation: float 20s ease-in-out infinite;
+    }
+
+    .hero::after {
+      content: "🎉";
+      position: absolute;
+      font-size: 8rem;
+      opacity: 0.1;
+      top: 10%;
+      right: 10%;
+      animation: spin 20s linear infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      33% { transform: translate(30px, -30px) rotate(5deg); }
+      66% { transform: translate(-20px, 20px) rotate(-5deg); }
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 3rem;
+      align-items: start;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      color: white;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 1rem;
+      display: inline-block;
+      background: linear-gradient(135deg, #ef4444 0%, #f59e0b 100%);
+      padding: 0.6rem 1.5rem;
+      border-radius: 999px;
+      box-shadow: 0 4px 15px rgba(239,68,68,0.4);
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, #1e40af 0%, #ef4444 50%, #f59e0b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(2px 2px 8px rgba(59,130,246,0.2));
+    }
+
+    .hero-lead {
+      font-size: 1.25rem;
+      color: var(--color-text);
+      margin-bottom: 2rem;
+      line-height: 1.9;
+      background: rgba(255, 255, 255, 0.75);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      backdrop-filter: blur(15px);
+      border: 2px solid rgba(59,130,246,0.2);
+      box-shadow: 0 4px 20px rgba(59,130,246,0.1);
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .quick-links {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .chip {
+      display: inline-block;
+      padding: 0.6rem 1.5rem;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      border: 2px solid var(--color-primary);
+      border-radius: 999px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--color-primary);
+      transition: all 0.3s;
+      box-shadow: 0 4px 12px rgba(59,130,246,0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .chip::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: linear-gradient(135deg, #3b82f6, #ef4444);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.5s, height 0.5s;
+      z-index: -1;
+    }
+
+    .chip:hover {
+      color: white;
+      border-color: transparent;
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 8px 20px rgba(59,130,246,0.4);
+    }
+
+    .chip:hover::before {
+      width: 200px;
+      height: 200px;
+    }
+
+    .fineprint {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+    }
+
+    /* Card */
+    .card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: 0 8px 30px rgba(59,130,246,0.12);
+      border: 3px solid transparent;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #3b82f6 0%, #ef4444 50%, #f59e0b 100%);
+    }
+
+    .card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 15px 40px rgba(59,130,246,0.25);
+      border-color: var(--color-primary);
+    }
+
+    .card-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      border-bottom: 3px solid;
+      border-image: linear-gradient(90deg, #3b82f6, #ef4444) 1;
+      padding-bottom: 0.75rem;
+    }
+
+    .card-list {
+      list-style: none;
+    }
+
+    .card-list li {
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--color-border);
+      transition: all 0.3s;
+    }
+
+    .card-list li:hover {
+      padding-left: 1rem;
+      background: var(--color-bg-alt);
+      border-radius: 8px;
+    }
+
+    .card-list li:last-child {
+      border-bottom: none;
+    }
+
+    .card-list .date {
+      font-size: 0.875rem;
+      color: var(--color-primary);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Gallery Images */
+    .hero-images {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .hero-image {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(59,130,246,0.3);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: 4px solid rgba(255, 255, 255, 0.85);
+      position: relative;
+    }
+
+    .hero-image::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(59,130,246,0.3), rgba(239,68,68,0.3));
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .hero-image:hover {
+      transform: scale(1.08) rotate(2deg);
+      box-shadow: 0 15px 40px rgba(59,130,246,0.5);
+      z-index: 10;
+    }
+
+    .hero-image:hover::after {
+      opacity: 1;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Section */
+    .section {
+      padding: 5rem 0;
+      position: relative;
+      background: transparent;
+    }
+
+    .section.alt {
+      background: rgba(240,249,255,0.55);
+    }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-title {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #3b82f6 0%, #ef4444 50%, #f59e0b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 5px;
+      background: linear-gradient(90deg, #3b82f6 0%, #ef4444 50%, #f59e0b 100%);
+      border-radius: 10px;
+    }
+
+    .section-sub {
+      color: var(--color-text-muted);
+      font-size: 1.125rem;
+      max-width: 700px;
+      margin: 1rem auto 0;
+    }
+
+    .grid {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+
+    /* Photo Gallery */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .photo-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(59,130,246,0.2);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: 4px solid rgba(255, 255, 255, 0.85);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .photo-item::before {
+      content: "📸";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      font-size: 3rem;
+      z-index: 10;
+      transition: transform 0.3s;
+    }
+
+    .photo-item::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(59,130,246,0.7), rgba(239,68,68,0.7));
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .photo-item:hover {
+      transform: translateY(-12px) scale(1.05) rotate(1deg);
+      box-shadow: 0 20px 50px rgba(59,130,246,0.4);
+      border-color: var(--color-primary);
+    }
+
+    .photo-item:hover::before {
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .photo-item:hover::after {
+      opacity: 1;
+    }
+
+    .photo-item img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Prose */
+    .prose p {
+      margin-bottom: 1rem;
+      line-height: 1.9;
+    }
+
+    .prose p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Facts */
+    .facts {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .fact {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 1rem;
+      padding: 1rem;
+      background: var(--color-bg-alt);
+      border-radius: 8px;
+      transition: all 0.3s;
+    }
+
+    .fact:hover {
+      background: var(--color-primary-light);
+      color: white;
+      transform: translateX(8px);
+    }
+
+    .fact dt {
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+
+    .fact:hover dt {
+      color: white;
+    }
+
+    /* Timeline */
+    .timeline {
+      list-style: none;
+      position: relative;
+    }
+
+    .timeline li {
+      padding: 1.5rem;
+      padding-left: 2rem;
+      border-left: 4px solid var(--color-primary);
+      margin-left: 1rem;
+      margin-bottom: 1.5rem;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: -13px;
+      top: 1.5rem;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      border: 4px solid white;
+      box-shadow: 0 0 0 2px var(--color-primary);
+    }
+
+    .timeline li:hover {
+      transform: translateX(8px);
+      box-shadow: var(--shadow-md);
+      background: rgba(240,249,255,0.75);
+    }
+
+    .timeline .date {
+      font-size: 1rem;
+      color: var(--color-primary);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    /* Bullets */
+    .bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .bullets li {
+      padding: 1rem;
+      padding-left: 3rem;
+      position: relative;
+      background: var(--color-bg-alt);
+      border-radius: 8px;
+      transition: all 0.3s;
+    }
+
+    .bullets li:hover {
+      background: var(--color-primary-light);
+      color: white;
+      transform: translateX(8px);
+    }
+
+    .bullets li:before {
+      content: "✓";
+      position: absolute;
+      left: 1rem;
+      color: var(--color-primary);
+      font-weight: bold;
+      font-size: 1.25rem;
+    }
+
+    .bullets li:hover:before {
+      color: white;
+    }
+
+    /* Parts */
+    .parts-grid {
+      gap: 1.5rem;
+    }
+
+    .part-card {
+      padding: 0;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(240, 249, 255, 0.85) 100%);
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius);
+      border: 3px solid var(--color-border);
+      transition: all 0.3s;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .part-card-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s;
+    }
+
+    .part-card:hover .part-card-img {
+      transform: scale(1.05);
+    }
+
+    .part-card-body {
+      padding: 1.25rem 1.5rem 1.5rem;
+    }
+
+    .part-card:hover {
+      border-color: var(--color-primary);
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+      color: white;
+    }
+
+    .part-card h4 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .part-card p {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+    }
+
+    .part-card:hover p {
+      color: rgba(255,255,255,0.9);
+    }
+
+    /* Contact */
+    .contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .contact-list li {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      background: var(--color-bg-alt);
+      border-radius: var(--radius);
+      transition: all 0.3s;
+    }
+
+    .contact-list li:hover {
+      background: var(--color-primary);
+      color: white;
+      transform: translateX(8px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .contact-list .icon {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      flex-shrink: 0;
+    }
+
+    /* ── スライダー ─────────────────────── */
+    .slider-wrap {
+      position: relative;
+      margin-top: 1.5rem;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(59,130,246,0.25);
+      background: #000;
+    }
+
+    .slider-track {
+      display: flex;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform;
+    }
+
+    .slide {
+      min-width: 100%;
+      position: relative;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .slide-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 0.6rem 1rem;
+      background: linear-gradient(transparent, rgba(0,0,0,0.55));
+      color: #fff;
+      font-size: 0.85rem;
+      letter-spacing: 0.03em;
+    }
+
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.85);
+      border: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      transition: background 0.2s, transform 0.2s;
+      z-index: 10;
+      color: #1e40af;
+    }
+
+    .slider-btn:hover {
+      background: #fff;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .slider-btn.prev { left: 0.75rem; }
+    .slider-btn.next { right: 0.75rem; }
+
+    .slider-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 0 0.25rem;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #d1d5db;
+      border: none;
+      cursor: pointer;
+      transition: background 0.25s, transform 0.25s;
+      padding: 0;
+    }
+
+    .dot.active {
+      background: var(--color-primary);
+      transform: scale(1.4);
+    }
+
+    .slider-counter {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #6b7280;
+      margin-top: 0.25rem;
+    }
+
+    @media (max-width: 600px) {
+      .slide img { height: 260px; }
+      .slider-btn { width: 36px; height: 36px; font-size: 0.9rem; }
+    }
+
+    /* Embed */
+    .embed {
+      margin-top: 1.5rem;
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .embed-placeholder {
+      background: var(--color-bg-alt);
+      border: 3px dashed var(--color-border);
+      padding: 4rem 2rem;
+      text-align: center;
+      color: var(--color-text-muted);
+      border-radius: var(--radius);
+    }
+
+    .embed iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border: none;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+      color: white;
+      padding: 4rem 0 2rem;
+      margin-top: 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .site-footer::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255,255,255,0.03) 20px, rgba(255,255,255,0.03) 40px);
+      pointer-events: none;
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 3rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .footer-brand .brand-mark {
+      color: white;
+      font-size: 3rem;
+    }
+
+    .footer-brand .brand-name {
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.9);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .footer-links a::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: white;
+      transition: width 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .footer-links a:hover::after {
+      width: 100%;
+    }
+
+    .footer-copy {
+      text-align: right;
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .muted {
+      color: var(--color-text-muted);
+      font-size: 0.875rem;
+    }
+
+    .divider {
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0%, var(--color-border) 50%, transparent 100%);
+      margin: 2rem 0;
+    }
+
+    @media (max-width: 968px) {
+      .nav {
+        display: none;
+      }
+      
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+      
+      .hero-card {
+        order: -1;
+      }
+
+      .hero-images {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      
+      .footer-copy {
+        text-align: center;
+      }
+
+      .footer-links {
+        justify-content: center;
+      }
+
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へスキップ</a>
+
+  <!-- Audio Control -->
+  <div class="audio-control">
+    <button class="audio-btn" id="audioBtn" aria-label="阿波おどりBGMを再生">
+      🎵
+    </button>
+  </div>
+
+  <audio id="awaOdoriAudio" loop>
+    <source src="https://pocket-se.info/se/awaodori.mp3" type="audio/mpeg">
+  </audio>
+  <!-- 音楽素材：ポケットサウンド様 https://pocket-se.info/archives/1496/ -->
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">笑</div>
+        <div class="brand-text">
+          <div class="brand-name">笑楽連</div>
+          <div class="brand-sub">Shoraku-ren / Awa Odori</div>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="メインメニュー">
+        <a class="nav-link" href="#about">連紹介</a>
+        <a class="nav-link" href="#schedule">活動予定</a>
+        <a class="nav-link" href="#media">動画・写真</a>
+        <a class="nav-link" href="#join">連員募集</a>
+        <a class="nav-link" href="#contact">お問い合わせ</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button class="lang-btn" type="button" data-lang="ja" aria-pressed="true">日本語</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+          <button class="lang-btn" type="button" data-lang="zh" aria-pressed="false">中文</button>
+        </div>
+        <a class="btn primary" href="#contact">DMで問い合わせ</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">埼玉県草加市を拠点に活動</p>
+          <h1 class="hero-title">笑顔で楽しく阿波踊り。<br />笑楽連(しょうらくれん)</h1>
+          <p class="hero-lead">子どもからお年寄りまで、世代を越えて阿波踊りを愛する仲間たち。少人数でも、ひとつになって"魅せる" 阿波踊りを追求しています。</p>
+          <div class="hero-cta">
+            <a class="btn primary" href="#join">連員募集を見る</a>
+            <a class="btn ghost" href="#schedule">今後の予定</a>
+          </div>
+
+          <div class="quick-links" aria-label="公式SNSリンク">
+            <a class="chip" href="https://www.instagram.com/awaodori.fools/" target="_blank" rel="noreferrer">📷 Instagram</a>
+            <a class="chip" href="https://facebook.com" target="_blank" rel="noreferrer">Facebook</a>
+            <a class="chip" href="https://www.youtube.com/@AwaodoriFools" target="_blank" rel="noreferrer">🎬 YouTube</a>
+            <a class="chip" href="https://line.me" target="_blank" rel="noreferrer">LINE</a>
+          </div>
+          <p class="fineprint">※SNSリンクは後から差し替えできます。埋め込み(YouTube/Instagram)も対応。</p>
+
+          <div class="hero-images">
+            <div class="hero-image">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Japan_-_Bon_AwaOdori_Festival_-_Tokushima_01.jpg" alt="阿波踊り - 女踊り" />
+            </div>
+            <div class="hero-image">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Japan_-_Bon_AwaOdori_Festival_-_Tokushima_02.jpg" alt="阿波踊り - 男踊り" />
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card" aria-label="お知らせ">
+          <div class="card">
+            <div class="card-title">最新情報</div>
+            <ul class="card-list">
+              <li>
+                <span class="date">2025.12.15</span>
+                新春公演の詳細が決定しました
+              </li>
+              <li>
+                <span class="date">2025.11.28</span>
+                連員募集を開始しました
+              </li>
+              <li>
+                <span class="date">2025.11.10</span>
+                秋祭りでの演舞が大盛況でした
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">連紹介</h2>
+          <p class="section-sub">「笑顔で楽しく阿波踊り」— 踊れば自然と笑顔が生まれ、笑顔が広がれば、また踊りが輝く。</p>
+        </div>
+
+        <div class="grid two">
+          <div class="card">
+            <div class="card-title">私たちについて</div>
+            <div class="prose">
+              <p>笑楽連は、埼玉県草加市を拠点に活動する阿波踊りグループです。2010年の設立以来、「笑顔で楽しく」をモットーに、地域のイベントや福祉施設での公演を通じて、阿波踊りの魅力を伝え続けています。</p>
+              <p>少人数ながらも一体感のある演舞を追求し、観る人の心に響く阿波踊りを目指しています。年齢や経験を問わず、誰でも楽しめる活動を大切にしています。</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-title">基本情報</div>
+            <dl class="facts">
+              <div class="fact">
+                <dt>設立</dt>
+                <dd>2010年</dd>
+              </div>
+              <div class="fact">
+                <dt>拠点</dt>
+                <dd>埼玉県草加市</dd>
+              </div>
+              <div class="fact">
+                <dt>連員数</dt>
+                <dd>約30名</dd>
+              </div>
+              <div class="fact">
+                <dt>練習日</dt>
+                <dd>毎週水曜・土曜 19:00〜21:00</dd>
+              </div>
+              <div class="fact">
+                <dt>練習場所</dt>
+                <dd>草加市文化会館ほか</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="schedule" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">2025活動記録と今後の予定</h2>
+          <p class="section-sub">地域のイベントや福祉施設での出演など、交流の場に積極的に参加しています。</p>
+        </div>
+
+        <div class="grid two">
+          <div class="card">
+            <div class="card-title">2025 活動記録</div>
+            <ul class="timeline">
+              <li>
+                <div class="date">11月3日</div>
+                草加市秋祭り
+              </li>
+              <li>
+                <div class="date">9月15日</div>
+                地域福祉施設慰問
+              </li>
+              <li>
+                <div class="date">8月12-14日</div>
+                高円寺阿波おどり参加
+              </li>
+              <li>
+                <div class="date">7月20日</div>
+                草加夏まつり
+              </li>
+              <li>
+                <div class="date">5月5日</div>
+                こどもの日イベント
+              </li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="card-title">今後の予定</div>
+            <ul class="timeline">
+              <li>
+                <div class="date">2026年1月12日</div>
+                新春公演(草加市文化会館)
+              </li>
+              <li>
+                <div class="date">2026年3月</div>
+                春の交流会(調整中)
+              </li>
+              <li>
+                <div class="date">2026年8月</div>
+                高円寺阿波おどり参加予定
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="media" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">動画・写真</h2>
+          <p class="section-sub">雰囲気が伝わるように、動画や写真を掲載できるスペースを用意しています。</p>
+        </div>
+
+        <div class="grid two">
+          <div class="card">
+            <div class="card-title">🎬 YouTube — Awaodori Fools</div>
+            <p class="muted">本場徳島の阿波おどりを撮り続けるチャンネル「Awaodori Fools」より</p>
+            <div class="embed">
+              <iframe
+                src="https://www.youtube.com/embed/sgxwBTaLtyI"
+                title="娯茶平 阿波おどり練習 2024 | Awaodori Fools"
+                allowfullscreen
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+              </iframe>
+            </div>
+            <div class="embed" style="margin-top:1rem;">
+              <iframe
+                src="https://www.youtube.com/embed/U0nIQpMj2Hg"
+                title="阿波おどりとは？ | Awaodori Fools"
+                allowfullscreen
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+              </iframe>
+            </div>
+            <p style="margin-top:0.75rem; font-size:0.85rem; color:#6b7280;">
+              ▶ チャンネル：<a href="https://www.youtube.com/@AwaodoriFools" target="_blank" rel="noreferrer" style="color:#3b82f6;">@AwaodoriFools</a>
+            </p>
+          </div>
+          <div class="card">
+            <div class="card-title">📸 Instagram — awaodori.fools</div>
+            <p class="muted">本場徳島の阿波おどりを発信する公式アカウント（フォロワー9.3万人）</p>
+            <div style="display:flex; flex-direction:column; gap:0.5rem; align-items:center;">
+              <blockquote
+                class="instagram-media"
+                data-instgrm-captioned
+                data-instgrm-permalink="https://www.instagram.com/reel/DPY6G7LDS6V/"
+                data-instgrm-version="14"
+                style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,.5),0 1px 10px 0 rgba(0,0,0,.15); margin:0; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+              </blockquote>
+              <script async src="//www.instagram.com/embed.js"></script>
+            </div>
+            <p style="margin-top:0.75rem; font-size:0.85rem; color:#6b7280;">
+              📷 アカウント：<a href="https://www.instagram.com/awaodori.fools/" target="_blank" rel="noreferrer" style="color:#e1306c;">@awaodori.fools</a>
+              ／ 徳島市公式：<a href="https://www.instagram.com/awaodori_mirai2021" target="_blank" rel="noreferrer" style="color:#e1306c;">@awaodori_mirai2021</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top: 2rem;">
+          <div class="card-title">写真ギャラリー</div>
+          <p class="muted">活動の様子をご覧ください。◀ ▶ で1枚ずつ閲覧できます。</p>
+
+          <div class="slider-wrap" id="gallery-slider">
+            <div class="slider-track" id="gallery-track">
+              <div class="slide">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Japan_-_Bon_AwaOdori_Festival_-_Tokushima_02.jpg" alt="阿波踊り 女踊り" />
+                <div class="slide-caption">女踊り — 優雅に揺れる扇</div>
+              </div>
+              <div class="slide">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Japan_-_Bon_AwaOdori_Festival_-_Tokushima_07.jpg" alt="阿波踊り 提灯の灯り" />
+                <div class="slide-caption">夜の提灯 — 幻想的な灯り</div>
+              </div>
+              <div class="slide">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Japan_-_Bon_AwaOdori_Festival_-_Tokushima_01.jpg" alt="阿波踊り 集合" />
+                <div class="slide-caption">お祭りの熱気 — 観客も一体に</div>
+              </div>
+              <div class="slide">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Japan_-_Bon_AwaOdori_Festival_-_Tokushima_09.jpg" alt="阿波踊り 流し踊り" />
+                <div class="slide-caption">流し踊り — 街を彩る行列</div>
+              </div>
+              <div class="slide">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Japan_-_Bon_AwaOdori_Festival_-_Tokushima_04.jpg" alt="阿波踊り 男踊り" />
+                <div class="slide-caption">男踊り — ダイナミックな躍動</div>
+              </div>
+              <div class="slide">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Japan_-_Bon_AwaOdori_Festival_-_Tokushima_06.jpg" alt="阿波踊り フィナーレ" />
+                <div class="slide-caption">フィナーレ — 全員で踊る感動</div>
+              </div>
+            </div>
+            <button class="slider-btn prev" id="gallery-prev" aria-label="前の写真">&#10094;</button>
+            <button class="slider-btn next" id="gallery-next" aria-label="次の写真">&#10095;</button>
+          </div>
+          <div class="slider-dots" id="gallery-dots"></div>
+          <div class="slider-counter" id="gallery-counter">1 / 6</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="join" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">連員募集</h2>
+          <p class="section-sub">国籍や年齢、経験を問わず、全てのパートで連員を大募集中です!</p>
+        </div>
+
+        <div class="grid two">
+          <div class="card">
+            <div class="card-title">メッセージ</div>
+            <div class="prose">
+              <p>阿波踊りが初めての方も大歓迎!丁寧に指導しますので、安心してご参加ください。</p>
+              <p>見学・体験は随時受け付けています。まずはお気軽にお問い合わせください。一緒に笑顔で楽しく踊りましょう!</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-title">入連条件</div>
+            <ul class="bullets">
+              <li>年齢・性別・国籍不問</li>
+              <li>阿波踊り経験不問(初心者歓迎)</li>
+              <li>月2回以上の練習参加が可能な方</li>
+              <li>イベント出演に協力できる方</li>
+              <li>仲間を大切にできる方</li>
+            </ul>
+            <div class="divider"></div>
+            <div class="card-title">費用(目安)</div>
+            <dl class="facts">
+              <div class="fact">
+                <dt>入会金</dt>
+                <dd>無料</dd>
+              </div>
+              <div class="fact">
+                <dt>月会費</dt>
+                <dd>2,000円</dd>
+              </div>
+              <div class="fact">
+                <dt>衣装代</dt>
+                <dd>実費(約15,000円〜)</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top: 2rem;">
+          <div class="card-title">募集パート</div>
+          <div class="grid two parts-grid">
+            <div class="part-card">
+              <img class="part-card-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Japan_-_Bon_AwaOdori_Festival_-_Tokushima_02.jpg" alt="女踊り" />
+              <div class="part-card-body">
+                <h4>🎭 女踊り</h4>
+                <p>優雅で美しい踊りを一緒に楽しみましょう</p>
+              </div>
+            </div>
+            <div class="part-card">
+              <img class="part-card-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Japan_-_Bon_AwaOdori_Festival_-_Tokushima_04.jpg" alt="男踊り" />
+              <div class="part-card-body">
+                <h4>💪 男踊り</h4>
+                <p>力強く躍動感あふれる踊りを目指します</p>
+              </div>
+            </div>
+            <div class="part-card">
+              <img class="part-card-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Awa-Odori-kikusui-narimono.JPG" alt="鳴り物" />
+              <div class="part-card-body">
+                <h4>🥁 鳴り物</h4>
+                <p>太鼓・鉦・笛など、リズムを刻む楽しさを</p>
+              </div>
+            </div>
+            <div class="part-card">
+              <img class="part-card-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Japan_-_Bon_AwaOdori_Festival_-_Tokushima_05.jpg" alt="子ども踊り" />
+              <div class="part-card-body">
+                <h4>👨‍👩‍👧‍👦 子ども踊り</h4>
+                <p>小学生〜中学生、元気いっぱい踊ろう!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">お問い合わせ</h2>
+          <p class="section-sub">体験参加のご相談・出演依頼など、お気軽にご連絡ください。</p>
+        </div>
+
+        <div class="grid two">
+          <div class="card">
+            <div class="card-title">連絡方法</div>
+            <ul class="contact-list">
+              <li>
+                <div class="icon">📷</div>
+                <div>Instagram DM</div>
+              </li>
+              <li>
+                <div class="icon">👥</div>
+                <div>Facebook メッセージ</div>
+              </li>
+              <li>
+                <div class="icon">💬</div>
+                <div>LINE公式アカウント</div>
+              </li>
+            </ul>
+            <p class="fineprint">※返信まで少しお時間をいただく場合があります。</p>
+          </div>
+          <div class="card">
+            <div class="card-title">広報担当</div>
+            <dl class="facts">
+              <div class="fact">
+                <dt>担当</dt>
+                <dd>谷さん</dd>
+              </div>
+              <div class="fact">
+                <dt>連絡</dt>
+                <dd>Instagram / Facebook のDM、または公式LINE</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="brand-mark" aria-hidden="true">笑</div>
+        <div>
+          <div class="brand-name">笑楽連</div>
+          <div class="muted" style="color: rgba(255,255,255,0.8);">笑顔で楽しく阿波踊り</div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="#about">連紹介</a>
+        <a href="#schedule">活動予定</a>
+        <a href="#media">動画・写真</a>
+        <a href="#join">連員募集</a>
+        <a href="#contact">お問い合わせ</a>
+      </div>
+      <div class="footer-copy">© <span id="year">2025</span> Shoraku-ren</div>
+    </div>
+  </footer>
+
+  <script>
+    // Convert uploaded image to usable format
+    function setHeaderBackground() {
+      const header = document.querySelector('.site-header');
+      
+      // Using a placeholder - in production, you would upload to an image hosting service
+      // For demonstration, we'll use a fallback
+      const imageUrl = 'https://raw.githubusercontent.com/American-dog6-alt/test/master/1766894331241.jpg.jpg';
+      
+      header.style.backgroundImage = `
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.60)),
+        url('${imageUrl}')
+      `;
+      header.style.backgroundSize = 'cover';
+      header.style.backgroundPosition = 'center';
+      header.style.backgroundRepeat = 'no-repeat';
+    }
+    
+    // Load background on page load
+    setHeaderBackground();
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Audio Control
+    const audioBtn = document.getElementById('audioBtn');
+    const audio = document.getElementById('awaOdoriAudio');
+    let isPlaying = false;
+
+    audioBtn.addEventListener('click', () => {
+      if (isPlaying) {
+        audio.pause();
+        audioBtn.textContent = '🎵';
+        audioBtn.classList.remove('playing');
+      } else {
+        audio.play();
+        audioBtn.textContent = '🎶';
+        audioBtn.classList.add('playing');
+      }
+      isPlaying = !isPlaying;
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // ── 翻訳辞書 ────────────────────────────────────────
+    const i18n = {
+      ja: {
+        'nav-about':        '連紹介',
+        'nav-schedule':     '活動予定',
+        'nav-media':        '動画・写真',
+        'nav-join':         '連員募集',
+        'nav-contact':      'お問い合わせ',
+        'btn-contact':      'DMで問い合わせ',
+        'brand-sub':        '笑顔で楽しく阿波踊り',
+        'hero-eyebrow':     '埼玉県草加市を拠点に活動',
+        'hero-title':       '笑顔で楽しく、<br><span class="accent">阿波踊り。</span><br>笑楽連(しょうらくれん)',
+        'hero-lead':        '子どもからお年寄りまで、世代を越えて阿波踊りを愛する仲間たち。少人数でも、ひとつになって"魅せる" 阿波踊りを追求しています。',
+        'btn-join':         '連員募集を見る',
+        'btn-schedule':     '今後の予定',
+        'card-news-title':  '最新情報',
+        'news-1':           '新春公演の詳細が決定しました',
+        'news-2':           '連員募集を開始しました',
+        'news-3':           '秋祭りでの演舞が大盛況でした',
+        'about-label':      'About',
+        'about-title':      '連紹介',
+        'about-sub':        '「笑顔で楽しく阿波踊り」— 踊れば自然と笑顔が生まれ、笑顔が広がれば、また踊りが輝く。',
+        'about-us-title':   '私たちについて',
+        'about-us-p1':      '笑楽連は、埼玉県草加市を拠点に活動する阿波踊りグループです。2010年の設立以来、「笑顔で楽しく」をモットーに、地域のイベントや福祉施設での公演を通じて、阿波踊りの魅力を伝え続けています。',
+        'about-us-p2':      '少人数ながらも一体感のある演舞を追求し、観る人の心に響く阿波踊りを目指しています。年齢や経験を問わず、誰でも楽しめる活動を大切にしています。',
+        'info-title':       '基本情報',
+        'info-founded-dt':  '設立',
+        'info-founded-dd':  '2010年',
+        'info-base-dt':     '拠点',
+        'info-base-dd':     '埼玉県草加市',
+        'info-members-dt':  '連員数',
+        'info-members-dd':  '約30名',
+        'info-practice-dt': '練習日',
+        'info-practice-dd': '毎週水曜・土曜 19:00〜21:00',
+        'info-place-dt':    '練習場所',
+        'info-place-dd':    '草加市文化会館ほか',
+        'sched-label':      'Schedule',
+        'sched-title':      '2025活動記録と今後の予定',
+        'sched-sub':        '地域のイベントや福祉施設での出演など、交流の場に積極的に参加しています。',
+        'sched-past-title': '2025 活動記録',
+        'sched-e1':         '草加市秋祭り',
+        'sched-e2':         '地域福祉施設慰問',
+        'sched-e3':         '高円寺阿波おどり参加',
+        'sched-e4':         '草加夏まつり',
+        'sched-e5':         'こどもの日イベント',
+        'sched-future-title':'今後の予定',
+        'sched-f1':         '新春公演(草加市文化会館)',
+        'sched-f2':         '春の交流会(調整中)',
+        'sched-f3':         '高円寺阿波おどり参加予定',
+        'media-label':      'Media',
+        'media-title':      '動画・写真',
+        'media-sub':        '南越谷阿波踊りや本場徳島の有名連の動画・写真をご覧ください。',
+        'yt-card-title':    '🎬 YouTube — 阿波おどり動画',
+        'yt-desc':          '南越谷阿波踊り出演連のCM映像と、本場徳島の有名連まとめ（Awaodori Fools）',
+        'ig-card-title':    '📸 Instagram — @awaodori.fools',
+        'ig-desc':          '本場徳島の阿波おどりを発信する人気アカウント（フォロワー9.3万人）',
+        'gallery-title':    '写真ギャラリー',
+        'gallery-desc':     '活動の様子をご覧ください。◀ ▶ で1枚ずつ閲覧できます。',
+        'cap-1':            '女踊り — 優雅に揺れる扇',
+        'cap-2':            '夜の提灯 — 幻想的な灯り',
+        'cap-3':            'お祭りの熱気 — 観客も一体に',
+        'cap-4':            '流し踊り — 街を彩る行列',
+        'cap-5':            '男踊り — ダイナミックな躍動',
+        'cap-6':            'フィナーレ — 全員で踊る感動',
+        'join-label':       'Join Us',
+        'join-title':       '連員募集',
+        'join-sub':         '国籍や年齢、経験を問わず、全てのパートで連員を大募集中です!',
+        'msg-title':        'メッセージ',
+        'msg-p1':           '阿波踊りが初めての方も大歓迎！丁寧に指導しますので、安心してご参加ください。',
+        'msg-p2':           '見学・体験は随時受け付けています。まずはお気軽にお問い合わせください。一緒に笑顔で楽しく踊りましょう!',
+        'cond-title':       '入連条件',
+        'cond-1':           '年齢・性別・国籍不問',
+        'cond-2':           '阿波踊り経験不問(初心者歓迎)',
+        'cond-3':           '月2回以上の練習参加が可能な方',
+        'cond-4':           'イベント出演に協力できる方',
+        'cond-5':           '仲間を大切にできる方',
+        'fee-title':        '費用(目安)',
+        'fee-entry-dt':     '入会金',
+        'fee-entry-dd':     '無料',
+        'fee-monthly-dt':   '月会費',
+        'fee-monthly-dd':   '2,000円',
+        'fee-costume-dt':   '衣装代',
+        'fee-costume-dd':   '実費(約15,000円〜)',
+        'parts-title':      '募集パート',
+        'part-1-name':      '🎭 女踊り',
+        'part-1-desc':      '優雅で美しい踊りを一緒に楽しみましょう',
+        'part-2-name':      '💪 男踊り',
+        'part-2-desc':      '力強く躍動感あふれる踊りを目指します',
+        'part-3-name':      '🥁 鳴り物',
+        'part-3-desc':      '太鼓・鉦・笛など、リズムを刻む楽しさを',
+        'part-4-name':      '👨‍👩‍👧‍👦 子ども踊り',
+        'part-4-desc':      '小学生〜中学生、元気いっぱい踊ろう!',
+        'contact-label':    'Contact',
+        'contact-title':    'お問い合わせ',
+        'contact-sub':      '体験参加のご相談・出演依頼など、お気軽にご連絡ください。',
+        'contact-method':   '連絡方法',
+        'contact-ig':       'Instagram DM',
+        'contact-fb':       'Facebook メッセージ',
+        'contact-line':     'LINE公式アカウント',
+        'contact-note':     '※返信まで少しお時間をいただく場合があります。',
+        'contact-pr-title': '広報担当',
+        'contact-who-dt':   '担当',
+        'contact-who-dd':   '谷さん',
+        'contact-how-dt':   '連絡',
+        'contact-how-dd':   'Instagram / Facebook のDM、または公式LINE',
+        'footer-about':     '連紹介',
+        'footer-schedule':  '活動予定',
+        'footer-media':     '動画・写真',
+        'footer-join':      '連員募集',
+        'footer-contact':   'お問い合わせ',
+      },
+      en: {
+        'nav-about':        'About',
+        'nav-schedule':     'Schedule',
+        'nav-media':        'Media',
+        'nav-join':         'Join Us',
+        'nav-contact':      'Contact',
+        'btn-contact':      'Send DM',
+        'brand-sub':        'Smiling Through Awa Odori',
+        'hero-eyebrow':     'Based in Soka City, Saitama',
+        'hero-title':       'Dance with a Smile.<br><span class="accent">Awa Odori.</span><br>Shoraku-ren',
+        'hero-lead':        'A community of Awa Odori lovers spanning all ages and generations. We are a small group with a big heart, dedicated to performances that truly move our audiences.',
+        'btn-join':         'Join the Group',
+        'btn-schedule':     'Upcoming Events',
+        'card-news-title':  'Latest News',
+        'news-1':           'New Year performance details confirmed',
+        'news-2':           'Member recruitment now open',
+        'news-3':           'Autumn festival performance was a great success',
+        'about-label':      'About',
+        'about-title':      'About Us',
+        'about-sub':        '"Dance with Smiles" — A smile blooms when you dance, and when smiles spread, the dance shines brighter.',
+        'about-us-title':   'Who We Are',
+        'about-us-p1':      'Shoraku-ren is an Awa Odori dance group based in Soka City, Saitama. Since our founding in 2010, our motto has been "Dance with Smiles." We perform at local events and welfare facilities to share the joy of Awa Odori.',
+        'about-us-p2':      'Though a small group, we strive for unity in our performances and aim to create Awa Odori that resonates with every viewer. We value an inclusive environment where anyone can enjoy participating, regardless of age or experience.',
+        'info-title':       'Basic Info',
+        'info-founded-dt':  'Founded',
+        'info-founded-dd':  '2010',
+        'info-base-dt':     'Base',
+        'info-base-dd':     'Soka City, Saitama',
+        'info-members-dt':  'Members',
+        'info-members-dd':  'Approx. 30',
+        'info-practice-dt': 'Practice',
+        'info-practice-dd': 'Wed & Sat, 19:00–21:00',
+        'info-place-dt':    'Venue',
+        'info-place-dd':    'Soka City Cultural Hall, etc.',
+        'sched-label':      'Schedule',
+        'sched-title':      '2025 Activities & Upcoming',
+        'sched-sub':        'We actively participate in local events, festivals, and welfare facility performances.',
+        'sched-past-title': '2025 Past Events',
+        'sched-e1':         'Soka Autumn Festival',
+        'sched-e2':         'Welfare Facility Visit',
+        'sched-e3':         'Koenji Awa Odori',
+        'sched-e4':         'Soka Summer Festival',
+        'sched-e5':         "Children's Day Event",
+        'sched-future-title':'Upcoming Events',
+        'sched-f1':         'New Year Performance (Soka Cultural Hall)',
+        'sched-f2':         'Spring Social (TBD)',
+        'sched-f3':         'Koenji Awa Odori (planned)',
+        'media-label':      'Media',
+        'media-title':      'Videos & Photos',
+        'media-sub':        'Watch videos and photos of Awa Odori from Minamikoshigaya and Tokushima.',
+        'yt-card-title':    '🎬 YouTube — Awa Odori Videos',
+        'yt-desc':          'CM footage featuring local Minamikoshigaya groups, plus top Tokushima troupes (Awaodori Fools)',
+        'ig-card-title':    '📸 Instagram — @awaodori.fools',
+        'ig-desc':          'A popular account showcasing authentic Awa Odori from Tokushima (93K followers)',
+        'gallery-title':    'Photo Gallery',
+        'gallery-desc':     'Browse our photos one by one using ◀ ▶.',
+        'cap-1':            "Women's Dance — Graceful fans in motion",
+        'cap-2':            'Lanterns at Night — Magical glow',
+        'cap-3':            'Festival Energy — Crowd and dancers as one',
+        'cap-4':            'Nagashi Dance — Procession through the streets',
+        'cap-5':            "Men's Dance — Dynamic and powerful",
+        'cap-6':            'Finale — The emotion of dancing together',
+        'join-label':       'Join Us',
+        'join-title':       'Join Shoraku-ren',
+        'join-sub':         'We welcome all parts, regardless of nationality, age, or experience!',
+        'msg-title':        'Message',
+        'msg-p1':           'Beginners are very welcome! We offer patient, friendly instruction so you can join with confidence.',
+        'msg-p2':           'Observation and trial sessions are available anytime. Feel free to reach out and come dance with us!',
+        'cond-title':       'Requirements',
+        'cond-1':           'Open to all ages, genders & nationalities',
+        'cond-2':           'No experience needed (beginners welcome)',
+        'cond-3':           'Able to attend practice 2+ times/month',
+        'cond-4':           'Willing to participate in events',
+        'cond-5':           'Respectful and kind to fellow members',
+        'fee-title':        'Fees (Estimate)',
+        'fee-entry-dt':     'Registration',
+        'fee-entry-dd':     'Free',
+        'fee-monthly-dt':   'Monthly Dues',
+        'fee-monthly-dd':   '¥2,000',
+        'fee-costume-dt':   'Costume',
+        'fee-costume-dd':   'Actual cost (approx. ¥15,000+)',
+        'parts-title':      'Open Positions',
+        'part-1-name':      '🎭 Women\'s Dance',
+        'part-1-desc':      'Graceful and beautiful — dance with elegance',
+        'part-2-name':      '💪 Men\'s Dance',
+        'part-2-desc':      'Bold and dynamic — make every move count',
+        'part-3-name':      '🥁 Musicians',
+        'part-3-desc':      'Drums, bells, flutes — feel the rhythm',
+        'part-4-name':      '👨‍👩‍👧‍👦 Children\'s Dance',
+        'part-4-desc':      'Elementary to junior high — dance with all your energy!',
+        'contact-label':    'Contact',
+        'contact-title':    'Contact Us',
+        'contact-sub':      'For trial sessions, performance requests, and more.',
+        'contact-method':   'How to Reach Us',
+        'contact-ig':       'Instagram DM',
+        'contact-fb':       'Facebook Message',
+        'contact-line':     'Official LINE Account',
+        'contact-note':     '* We may take a few days to reply.',
+        'contact-pr-title': 'PR Representative',
+        'contact-who-dt':   'Contact',
+        'contact-who-dd':   'Ms. Tani',
+        'contact-how-dt':   'Method',
+        'contact-how-dd':   'Instagram / Facebook DM, or official LINE',
+        'footer-about':     'About',
+        'footer-schedule':  'Schedule',
+        'footer-media':     'Media',
+        'footer-join':      'Join Us',
+        'footer-contact':   'Contact',
+      },
+      zh: {
+        'nav-about':        '关于我们',
+        'nav-schedule':     '活动日程',
+        'nav-media':        '视频·照片',
+        'nav-join':         '招募成员',
+        'nav-contact':      '联系我们',
+        'btn-contact':      '私信联系',
+        'brand-sub':        '笑着跳阿波舞',
+        'hero-eyebrow':     '以埼玉县草加市为据点',
+        'hero-title':       '开心跳舞，<br><span class="accent">阿波舞。</span><br>笑楽連（しょうらくれん）',
+        'hero-lead':        '从孩子到老人，跨越世代热爱阿波舞的伙伴们。虽然人数不多，但我们齐心协力，追求令观众动容的阿波舞表演。',
+        'btn-join':         '查看招募信息',
+        'btn-schedule':     '活动预定',
+        'card-news-title':  '最新动态',
+        'news-1':           '新春公演详情已确定',
+        'news-2':           '成员招募已开始',
+        'news-3':           '秋祭演出大获成功',
+        'about-label':      'About',
+        'about-title':      '关于我们',
+        'about-sub':        '"笑着跳阿波舞" — 跳起舞来自然浮现笑容，笑容传递开来，舞蹈也更加闪耀。',
+        'about-us-title':   '我们的故事',
+        'about-us-p1':      '笑楽連是以埼玉县草加市为据点活动的阿波舞团体。自2010年成立以来，以"笑着快乐地"为座右铭，通过参加地区活动和福利设施演出，持续传递阿波舞的魅力。',
+        'about-us-p2':      '虽然人数不多，但我们追求整体感强的演出，致力于打造能触动观众心灵的阿波舞。无论年龄和经验，我们都重视让每个人都能享受其中的活动氛围。',
+        'info-title':       '基本信息',
+        'info-founded-dt':  '成立',
+        'info-founded-dd':  '2010年',
+        'info-base-dt':     '据点',
+        'info-base-dd':     '埼玉县草加市',
+        'info-members-dt':  '成员数',
+        'info-members-dd':  '约30名',
+        'info-practice-dt': '练习日',
+        'info-practice-dd': '每周三·六 19:00〜21:00',
+        'info-place-dt':    '练习场地',
+        'info-place-dd':    '草加市文化会馆等',
+        'sched-label':      'Schedule',
+        'sched-title':      '2025年活动记录与近期预定',
+        'sched-sub':        '我们积极参加地区活动、福利设施演出等各种交流活动。',
+        'sched-past-title': '2025年活动记录',
+        'sched-e1':         '草加市秋祭',
+        'sched-e2':         '地区福利设施慰问',
+        'sched-e3':         '高圆寺阿波舞参加',
+        'sched-e4':         '草加夏祭',
+        'sched-e5':         '儿童节活动',
+        'sched-future-title':'近期预定',
+        'sched-f1':         '新春公演（草加市文化会馆）',
+        'sched-f2':         '春季交流会（调整中）',
+        'sched-f3':         '高圆寺阿波舞（预定参加）',
+        'media-label':      'Media',
+        'media-title':      '视频·照片',
+        'media-sub':        '请欣赏南越谷阿波舞及德岛名连的视频与照片。',
+        'yt-card-title':    '🎬 YouTube — 阿波舞视频',
+        'yt-desc':          '南越谷阿波舞参演连CM影像，以及德岛名连合集（Awaodori Fools）',
+        'ig-card-title':    '📸 Instagram — @awaodori.fools',
+        'ig-desc':          '发布正宗德岛阿波舞内容的人气账号（粉丝9.3万人）',
+        'gallery-title':    '照片画廊',
+        'gallery-desc':     '请欣赏活动照片。使用 ◀ ▶ 逐张浏览。',
+        'cap-1':            '女舞 — 优雅摇曳的扇子',
+        'cap-2':            '夜晚的灯笼 — 梦幻般的光芒',
+        'cap-3':            '节日热情 — 观众与演者融为一体',
+        'cap-4':            '流し踊り — 装点街道的游行',
+        'cap-5':            '男舞 — 豪迈动感的律动',
+        'cap-6':            '终曲 — 共舞的感动时刻',
+        'join-label':       'Join Us',
+        'join-title':       '成员招募',
+        'join-sub':         '不限国籍、年龄和经验，所有部门均在招募中！',
+        'msg-title':        '欢迎辞',
+        'msg-p1':           '初学者也非常欢迎！我们会耐心指导，请放心参加。',
+        'msg-p2':           '随时接受参观和体验申请。请先联系我们，一起笑着快乐地跳舞吧！',
+        'cond-title':       '入团条件',
+        'cond-1':           '不限年龄·性别·国籍',
+        'cond-2':           '不限阿波舞经验（欢迎初学者）',
+        'cond-3':           '每月可参加2次以上练习',
+        'cond-4':           '可配合参加演出活动',
+        'cond-5':           '能够珍视团队伙伴',
+        'fee-title':        '费用（参考）',
+        'fee-entry-dt':     '报名费',
+        'fee-entry-dd':     '免费',
+        'fee-monthly-dt':   '月会费',
+        'fee-monthly-dd':   '2,000日元',
+        'fee-costume-dt':   '服装费',
+        'fee-costume-dd':   '实费（约15,000日元起）',
+        'parts-title':      '招募部门',
+        'part-1-name':      '🎭 女舞',
+        'part-1-desc':      '一起享受优雅美丽的舞蹈吧',
+        'part-2-name':      '💪 男舞',
+        'part-2-desc':      '追求刚健有力、充满动感的舞蹈',
+        'part-3-name':      '🥁 乐器组',
+        'part-3-desc':      '太鼓·锣·笛子，感受打节拍的乐趣',
+        'part-4-name':      '👨‍👩‍👧‍👦 儿童舞',
+        'part-4-desc':      '小学至初中生，活力满满地跳舞！',
+        'contact-label':    'Contact',
+        'contact-title':    '联系我们',
+        'contact-sub':      '体验参加咨询、演出邀请等，欢迎随时联系。',
+        'contact-method':   '联系方式',
+        'contact-ig':       'Instagram 私信',
+        'contact-fb':       'Facebook 消息',
+        'contact-line':     'LINE官方账号',
+        'contact-note':     '※回复可能需要一些时间，敬请谅解。',
+        'contact-pr-title': '宣传负责人',
+        'contact-who-dt':   '负责人',
+        'contact-who-dd':   '谷先生/女士',
+        'contact-how-dt':   '联系方式',
+        'contact-how-dd':   'Instagram / Facebook 私信，或官方LINE',
+        'footer-about':     '关于我们',
+        'footer-schedule':  '活动日程',
+        'footer-media':     '视频·照片',
+        'footer-join':      '招募成员',
+        'footer-contact':   '联系我们',
+      }
+    };
+
+    function applyLang(lang) {
+      const t = i18n[lang];
+      function set(sel, key, html = false) {
+        const el = document.querySelector(sel);
+        if (!el || !t[key]) return;
+        if (html) el.innerHTML = t[key];
+        else el.textContent = t[key];
+      }
+      function setAll(sel, keys) {
+        const els = document.querySelectorAll(sel);
+        keys.forEach((key, i) => { if (els[i] && t[key]) els[i].textContent = t[key]; });
+      }
+      function setAllHTML(sel, keys) {
+        const els = document.querySelectorAll(sel);
+        keys.forEach((key, i) => { if (els[i] && t[key]) els[i].innerHTML = t[key]; });
+      }
+
+      // Nav
+      const navLinks = document.querySelectorAll('.nav .nav-link');
+      ['nav-about','nav-schedule','nav-media','nav-join','nav-contact'].forEach((k,i) => { if(navLinks[i]) navLinks[i].textContent = t[k]; });
+      const footerLinks = document.querySelectorAll('.footer-links a');
+      ['footer-about','footer-schedule','footer-media','footer-join','footer-contact'].forEach((k,i) => { if(footerLinks[i]) footerLinks[i].textContent = t[k]; });
+      set('.btn.primary[href="#contact"]', 'btn-contact');
+      set('.brand-sub', 'brand-sub');
+
+      // Hero
+      set('.eyebrow', 'hero-eyebrow');
+      set('.hero-title', 'hero-title', true);
+      set('.hero-lead', 'hero-lead');
+      const heroBtns = document.querySelectorAll('.hero-cta .btn');
+      if(heroBtns[0]) heroBtns[0].textContent = t['btn-join'];
+      if(heroBtns[1]) heroBtns[1].textContent = t['btn-schedule'];
+      set('.card-title', 'card-news-title');
+      const newsItems = document.querySelectorAll('.card-list li');
+      ['news-1','news-2','news-3'].forEach((k,i) => {
+        if(newsItems[i]) {
+          const span = newsItems[i].querySelector('.date');
+          newsItems[i].childNodes[newsItems[i].childNodes.length-1].textContent = '\n                ' + t[k] + '\n              ';
+        }
+      });
+
+      // About
+      set('.section-label', 'about-label');
+      const sectionLabels = document.querySelectorAll('.section-label');
+      const sectionTitles = document.querySelectorAll('.section-title');
+      const sectionSubs   = document.querySelectorAll('.section-sub');
+      const cardTitles    = document.querySelectorAll('.card-title');
+
+      const labelKeys  = ['about-label','sched-label','media-label','join-label','contact-label'];
+      const titleKeys  = ['about-title','sched-title','media-title','join-title','contact-title'];
+      const subKeys    = ['about-sub','sched-sub','media-sub','join-sub','contact-sub'];
+      labelKeys.forEach((k,i)=>{ if(sectionLabels[i]) sectionLabels[i].textContent = t[k]; });
+      titleKeys.forEach((k,i)=>{ if(sectionTitles[i]) sectionTitles[i].textContent = t[k]; });
+      subKeys.forEach((k,i)=>{ if(sectionSubs[i]) sectionSubs[i].textContent = t[k]; });
+
+      // Card titles (in order of appearance)
+      const ctKeys = ['card-news-title','about-us-title','info-title',
+                      'sched-past-title','sched-future-title',
+                      'yt-card-title','ig-card-title','gallery-title',
+                      'msg-title','cond-title','fee-title','parts-title',
+                      'contact-method','contact-pr-title'];
+      ctKeys.forEach((k,i)=>{ if(cardTitles[i]) cardTitles[i].textContent = t[k]; });
+
+      // About prose
+      const prosePara = document.querySelectorAll('.prose p');
+      if(prosePara[0]) prosePara[0].textContent = t['about-us-p1'];
+      if(prosePara[1]) prosePara[1].textContent = t['about-us-p2'];
+      if(prosePara[2]) prosePara[2].textContent = t['msg-p1'];
+      if(prosePara[3]) prosePara[3].textContent = t['msg-p2'];
+
+      // Facts — about
+      const facts = document.querySelectorAll('.fact');
+      const factData = [
+        ['info-founded-dt','info-founded-dd'],
+        ['info-base-dt','info-base-dd'],
+        ['info-members-dt','info-members-dd'],
+        ['info-practice-dt','info-practice-dd'],
+        ['info-place-dt','info-place-dd'],
+        ['fee-entry-dt','fee-entry-dd'],
+        ['fee-monthly-dt','fee-monthly-dd'],
+        ['fee-costume-dt','fee-costume-dd'],
+        ['contact-who-dt','contact-who-dd'],
+        ['contact-how-dt','contact-how-dd'],
+      ];
+      factData.forEach(([dtk,ddk],i)=>{
+        if(!facts[i]) return;
+        const dt = facts[i].querySelector('dt');
+        const dd = facts[i].querySelector('dd');
+        if(dt) dt.textContent = t[dtk];
+        if(dd) dd.textContent = t[ddk];
+      });
+
+      // Timeline
+      const timelineLi = document.querySelectorAll('.timeline li');
+      const tlKeys = ['sched-e1','sched-e2','sched-e3','sched-e4','sched-e5',
+                      'sched-f1','sched-f2','sched-f3'];
+      timelineLi.forEach((li,i)=>{
+        if(!tlKeys[i]) return;
+        const dateEl = li.querySelector('.date');
+        const text = li.childNodes[li.childNodes.length-1];
+        if(text && text.nodeType===3) text.textContent = '\n              ' + t[tlKeys[i]];
+      });
+
+      // Bullets (join conditions)
+      const bullets = document.querySelectorAll('.bullets li');
+      ['cond-1','cond-2','cond-3','cond-4','cond-5'].forEach((k,i)=>{
+        if(bullets[i]) bullets[i].textContent = t[k];
+      });
+
+      // Media desc
+      const mutedEls = document.querySelectorAll('.card .muted');
+      if(mutedEls[0]) mutedEls[0].textContent = t['yt-desc'];
+      if(mutedEls[1]) mutedEls[1].textContent = t['ig-desc'];
+      if(mutedEls[2]) mutedEls[2].textContent = t['gallery-desc'];
+
+      // Slide captions
+      const captions = document.querySelectorAll('.slide-caption');
+      ['cap-1','cap-2','cap-3','cap-4','cap-5','cap-6'].forEach((k,i)=>{
+        if(captions[i]) captions[i].textContent = t[k];
+      });
+
+      // Parts
+      const partNames = document.querySelectorAll('.part-card h4');
+      const partDescs = document.querySelectorAll('.part-card p');
+      ['part-1-name','part-2-name','part-3-name','part-4-name'].forEach((k,i)=>{
+        if(partNames[i]) partNames[i].textContent = t[k];
+      });
+      ['part-1-desc','part-2-desc','part-3-desc','part-4-desc'].forEach((k,i)=>{
+        if(partDescs[i]) partDescs[i].textContent = t[k];
+      });
+
+      // Contact list
+      const contactItems = document.querySelectorAll('.contact-list li > div:not(.icon)');
+      if(contactItems[0]) contactItems[0].textContent = t['contact-ig'];
+      if(contactItems[1]) contactItems[1].textContent = t['contact-fb'];
+      if(contactItems[2]) contactItems[2].textContent = t['contact-line'];
+      const fineprint = document.querySelector('.fineprint');
+      if(fineprint) fineprint.textContent = t['contact-note'];
+    }
+
+    // Language switcher
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.lang-btn').forEach(b => b.setAttribute('aria-pressed', 'false'));
+        btn.setAttribute('aria-pressed', 'true');
+        applyLang(btn.dataset.lang);
+      });
+    });
+
+
+    // ── ギャラリー スライダー ──────────────────────────
+    (function() {
+      const track   = document.getElementById('gallery-track');
+      const dotsWrap= document.getElementById('gallery-dots');
+      const counter = document.getElementById('gallery-counter');
+      if (!track) return;
+
+      const slides = track.querySelectorAll('.slide');
+      const total  = slides.length;
+      let current  = 0;
+      let autoTimer;
+
+      slides.forEach((_, i) => {
+        const d = document.createElement('button');
+        d.className = 'dot' + (i === 0 ? ' active' : '');
+        d.setAttribute('aria-label', `写真 ${i + 1}`);
+        d.addEventListener('click', () => goTo(i));
+        dotsWrap.appendChild(d);
+      });
+
+      function updateUI() {
+        track.style.transform = `translateX(-${current * 100}%)`;
+        dotsWrap.querySelectorAll('.dot').forEach((d, i) => {
+          d.classList.toggle('active', i === current);
+        });
+        counter.textContent = `${current + 1} / ${total}`;
+      }
+
+      function goTo(n) {
+        current = (n + total) % total;
+        updateUI();
+        resetAuto();
+      }
+
+      document.getElementById('gallery-prev').addEventListener('click', () => goTo(current - 1));
+      document.getElementById('gallery-next').addEventListener('click', () => goTo(current + 1));
+
+      document.addEventListener('keydown', e => {
+        if (e.key === 'ArrowLeft')  goTo(current - 1);
+        if (e.key === 'ArrowRight') goTo(current + 1);
+      });
+
+      let touchStartX = 0;
+      track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+      track.addEventListener('touchend', e => {
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(dx) > 40) goTo(current + (dx < 0 ? 1 : -1));
+      });
+
+      function startAuto() { autoTimer = setInterval(() => goTo(current + 1), 5000); }
+      function resetAuto()  { clearInterval(autoTimer); startAuto(); }
+      startAuto();
+      updateUI();
+    })();
+  </script>
+</body>
+</html>
