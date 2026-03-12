@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="笑楽連（しょうらくれん）- 埼玉県草加市を拠点に活動する阿波踊りグループ。活動記録・今後の予定・連員募集・SNSリンク。"
+    />
+    <title>笑楽連 | Shoraku-ren</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" href="data:," />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">本文へスキップ</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">笑</div>
+          <div class="brand-text">
+            <div class="brand-name">笑楽連</div>
+            <div class="brand-sub">Shoraku-ren / Awa Odori</div>
+          </div>
+        </div>
+
+        <nav class="nav" aria-label="メインメニュー">
+          <a class="nav-link" href="#about" data-i18n="nav_about">連紹介</a>
+          <a class="nav-link" href="#schedule" data-i18n="nav_schedule">活動予定</a>
+          <a class="nav-link" href="#media" data-i18n="nav_media">動画・写真</a>
+          <a class="nav-link" href="#join" data-i18n="nav_join">連員募集</a>
+          <a class="nav-link" href="#contact" data-i18n="nav_contact">お問い合わせ</a>
+        </nav>
+
+        <div class="header-actions">
+          <div class="lang-switch" role="group" aria-label="Language">
+            <button class="lang-btn" type="button" data-lang="ja" aria-pressed="true">
+              日本語
+            </button>
+            <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">
+              EN
+            </button>
+            <button class="lang-btn" type="button" data-lang="zh" aria-pressed="false">
+              中文
+            </button>
+          </div>
+          <a class="btn primary" href="#contact" data-i18n="cta_contact">DMで問い合わせ</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow" data-i18n="hero_eyebrow">埼玉県草加市を拠点に活動</p>
+            <h1 class="hero-title" data-i18n="hero_title">
+              笑顔で楽しく阿波踊り。<br />
+              笑楽連（しょうらくれん）
+            </h1>
+            <p class="hero-lead" data-i18n="hero_lead">
+              子どもからお年寄りまで、世代を越えて阿波踊りを愛する仲間たち。少人数でも、ひとつになって“魅せる”
+              阿波踊りを追求しています。
+            </p>
+            <div class="hero-cta">
+              <a class="btn primary" href="#join" data-i18n="cta_join">連員募集を見る</a>
+              <a class="btn ghost" href="#schedule" data-i18n="cta_schedule">今後の予定</a>
+            </div>
+
+            <div class="quick-links" aria-label="公式SNSリンク">
+              <a class="chip" id="link-instagram" href="#" target="_blank" rel="noreferrer">
+                Instagram
+              </a>
+              <a class="chip" id="link-facebook" href="#" target="_blank" rel="noreferrer">
+                Facebook
+              </a>
+              <a class="chip" id="link-youtube" href="#" target="_blank" rel="noreferrer">
+                YouTube
+              </a>
+              <a class="chip" id="link-line" href="#" target="_blank" rel="noreferrer">
+                LINE
+              </a>
+            </div>
+            <p class="fineprint" data-i18n="hero_note">
+              ※SNSリンクは後から差し替えできます。埋め込み（YouTube/Instagram）も対応。
+            </p>
+          </div>
+
+          <div class="hero-card" aria-label="お知らせ">
+            <div class="card">
+              <div class="card-title" data-i18n="news_title">最新情報</div>
+              <ul class="card-list" id="news-list" aria-live="polite"></ul>
+            </div>
+          </div>
+        </div>
+        <div class="hero-bg" aria-hidden="true"></div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title" data-i18n="about_title">連紹介</h2>
+            <p class="section-sub" data-i18n="about_sub">
+              「笑顔で楽しく阿波踊り」— 踊れば自然と笑顔が生まれ、笑顔が広がれば、また踊りが輝く。
+            </p>
+          </div>
+
+          <div class="grid two">
+            <div class="card">
+              <div class="card-title" data-i18n="about_overview_title">私たちについて</div>
+              <div class="prose" id="about-overview"></div>
+            </div>
+            <div class="card">
+              <div class="card-title" data-i18n="about_facts_title">基本情報</div>
+              <dl class="facts" id="about-facts"></dl>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="schedule" class="section alt">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title" data-i18n="schedule_title">2025活動記録と今後の予定</h2>
+            <p class="section-sub" data-i18n="schedule_sub">
+              地域のイベントや福祉施設での出演など、交流の場に積極的に参加しています。
+            </p>
+          </div>
+
+          <div class="grid two">
+            <div class="card">
+              <div class="card-title" data-i18n="past_title">2025 活動記録</div>
+              <ul class="timeline" id="past-events"></ul>
+            </div>
+            <div class="card">
+              <div class="card-title" data-i18n="future_title">今後の予定</div>
+              <ul class="timeline" id="future-events"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="media" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title" data-i18n="media_title">動画・写真</h2>
+            <p class="section-sub" data-i18n="media_sub">
+              雰囲気が伝わるように、動画や写真を掲載できるスペースを用意しています。
+            </p>
+          </div>
+
+          <div class="grid two">
+            <div class="card">
+              <div class="card-title" data-i18n="youtube_title">YouTube</div>
+              <p class="muted" data-i18n="youtube_note">
+                下の埋め込みは差し替え可能です（動画ID/再生リスト/チャンネル）。
+              </p>
+              <div class="embed" id="youtube-embed">
+                <div class="embed-placeholder" data-i18n="embed_placeholder">
+                  ここにYouTube動画を埋め込みます（設定でONにできます）
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-title" data-i18n="instagram_title">Instagram</div>
+              <p class="muted" data-i18n="instagram_note">
+                Instagramは「リンクのみ」または「埋め込み」どちらにも対応します。
+              </p>
+              <div class="embed" id="instagram-embed">
+                <div class="embed-placeholder" data-i18n="embed_placeholder_ig">
+                  ここにInstagram投稿を埋め込みます（設定でONにできます）
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card media-gallery">
+            <div class="card-title" data-i18n="gallery_title">写真ギャラリー（任意）</div>
+            <p class="muted" data-i18n="gallery_note">
+              後から写真を追加できます。まずは枠だけ用意しています。
+            </p>
+            <div class="gallery" id="gallery"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="join" class="section alt">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title" data-i18n="join_title">連員募集</h2>
+            <p class="section-sub" data-i18n="join_sub">
+              国籍や年齢、経験を問わず、全てのパートで連員を大募集中です！
+            </p>
+          </div>
+
+          <div class="grid two">
+            <div class="card">
+              <div class="card-title" data-i18n="join_message_title">メッセージ</div>
+              <div class="prose" id="join-message"></div>
+            </div>
+            <div class="card">
+              <div class="card-title" data-i18n="join_conditions_title">入連条件</div>
+              <ul class="bullets" id="join-conditions"></ul>
+              <div class="divider"></div>
+              <div class="card-title" data-i18n="fees_title">費用（目安）</div>
+              <dl class="facts" id="fees"></dl>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-title" data-i18n="parts_title">募集パート</div>
+            <div class="grid two parts-grid" id="parts"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title" data-i18n="contact_title">お問い合わせ</h2>
+            <p class="section-sub" data-i18n="contact_sub">
+              体験参加のご相談・出演依頼など、お気軽にご連絡ください。
+            </p>
+          </div>
+
+          <div class="grid two">
+            <div class="card">
+              <div class="card-title" data-i18n="contact_how_title">連絡方法</div>
+              <ul class="contact-list" id="contact-methods"></ul>
+              <p class="fineprint" data-i18n="contact_note">
+                ※返信まで少しお時間をいただく場合があります。
+              </p>
+            </div>
+            <div class="card">
+              <div class="card-title" data-i18n="contact_person_title">広報担当</div>
+              <dl class="facts">
+                <div class="fact">
+                  <dt data-i18n="contact_person_label">担当</dt>
+                  <dd data-i18n="contact_person_value">谷さん</dd>
+                </div>
+                <div class="fact">
+                  <dt data-i18n="contact_dm_label">連絡</dt>
+                  <dd data-i18n="contact_dm_value">Instagram / Facebook のDM、または公式LINE</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <div class="brand-mark" aria-hidden="true">笑</div>
+          <div>
+            <div class="brand-name">笑楽連</div>
+            <div class="muted" data-i18n="footer_tagline">笑顔で楽しく阿波踊り</div>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="#about" data-i18n="nav_about">連紹介</a>
+          <a href="#schedule" data-i18n="nav_schedule">活動予定</a>
+          <a href="#media" data-i18n="nav_media">動画・写真</a>
+          <a href="#join" data-i18n="nav_join">連員募集</a>
+          <a href="#contact" data-i18n="nav_contact">お問い合わせ</a>
+        </div>
+        <div class="muted footer-copy">© <span id="year"></span> Shoraku-ren</div>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
